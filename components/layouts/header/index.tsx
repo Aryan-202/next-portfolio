@@ -1,13 +1,12 @@
-
 'use client'
-
 import { useState, useEffect } from 'react'
 import { Menu, X, MessageSquare } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { NavLinks } from './nav-links'
-import { PROFILE_INFO, CTA_BUTTON } from './constants'
+import { PROFILE_INFO } from '@/data'
+import { CTA_BUTTON } from './constants'
 import styles from './navbar.module.css'
 
 const Navbar = () => {
