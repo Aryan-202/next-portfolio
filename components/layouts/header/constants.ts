@@ -57,7 +57,3 @@ export const CTA_BUTTON = {
   href: '/contact',
   description: 'Get in touch for collaborations',
 } as const
-
-export const BREAKPOINTS = {
-  mobile: 768,
-} as const

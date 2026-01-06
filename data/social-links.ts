@@ -1,4 +1,10 @@
-export const SOCIAL_LINKS = [
+export interface SocialLinks {
+    name :string,
+    href: string,
+    icon: string
+}
+
+export const SOCIAL_LINKS: SocialLinks[] = [
     {
         name: 'GitHub',
         href: 'https://github.com/Aryan-202',
