@@ -213,6 +213,12 @@
   }
 }
 
+.legalLinkWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .legalLink {
   font-size: 0.75rem;
   color: hsl(var(--muted-foreground));
