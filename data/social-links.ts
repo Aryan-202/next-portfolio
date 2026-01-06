@@ -14,7 +14,4 @@ export const SOCIAL_LINKS = [
         href: 'https://x.com/AryanxSenpai',
         icon: 'x'
     },
-    {
-        name: ''
-    }
-]
+] as const
