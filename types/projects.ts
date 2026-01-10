@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image';
+
 export interface Project {
   id: number;
   title: string;
@@ -7,4 +9,5 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
+  image: string | StaticImageData; // Accept both types
 }

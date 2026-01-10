@@ -1,3 +1,6 @@
+import { assets } from "@/public/assets";
+import { StaticImageData } from "next/image";
+
 export interface Project {
   id: number;
   title: string;
@@ -7,6 +10,7 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
+  image: string | StaticImageData; 
 }
 
 export const projects: Project[] = [
@@ -18,7 +22,8 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Jupyter", "Framer Motion"],
     githubUrl: "https://github.com/Aryan-202/DAAI",
     liveUrl: "https://github.com/Aryan-202/DAAI",
-    featured: true
+    featured: true,
+    image: assets.projects.daai // Use the imported image
   },
   {
     id: 2,
@@ -28,7 +33,8 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Prisma"],
     githubUrl: "https://github.com/Aryan-202/ecommerce",
     liveUrl: "https://shop-aryan.vercel.app",
-    featured: true
+    featured: true,
+    image: '/images/projects/ecommerce.jpg' // Example path for other projects
   },
   {
     id: 3,
@@ -38,34 +44,7 @@ export const projects: Project[] = [
     technologies: ["React", "Firebase", "Material UI", "React DnD"],
     githubUrl: "https://github.com/Aryan-202/task-manager",
     liveUrl: "https://tasks-aryan.vercel.app",
-    featured: true
+    featured: true,
+    image: '/images/projects/task-manager.jpg' 
   },
-  {
-    id: 4,
-    title: "Weather Dashboard",
-    description: "Real-time weather application with location-based forecasts and interactive charts.",
-    category: "Web Development",
-    technologies: ["React", "Chart.js", "OpenWeather API", "CSS Modules"],
-    githubUrl: "https://github.com/Aryan-202/weather-app",
-    liveUrl: "https://weather-aryan.vercel.app",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Blog CMS",
-    description: "Content Management System for blogging with markdown support and SEO optimization.",
-    category: "Full Stack",
-    technologies: ["Next.js", "Sanity.io", "Tailwind CSS", "Vercel"],
-    githubUrl: "https://github.com/Aryan-202/blog-cms",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "AI Chat Assistant",
-    description: "AI-powered chat application with natural language processing and conversation history.",
-    category: "AI/ML",
-    technologies: ["Python", "FastAPI", "React", "OpenAI API"],
-    githubUrl: "https://github.com/Aryan-202/ai-chat",
-    featured: false
-  }
 ];

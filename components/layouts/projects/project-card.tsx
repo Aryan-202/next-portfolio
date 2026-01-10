@@ -4,7 +4,8 @@ import { motion } from "motion/react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Star } from "lucide-react";
-import type { Project } from "@/types/project";
+import Image from "next/image";
+import type { Project } from "@/data/projects";
 import styles from "./project.module.css";
 
 interface ProjectCardProps {
@@ -24,10 +25,26 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
     >
       <Card className={`overflow-hidden h-full transition-all duration-300 ${styles.projectCard}`}>
         {/* Project Image */}
-        <div className="relative overflow-hidden">
-          <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-            <div className="text-4xl">🚀</div>
-          </div>
+        <div className="relative overflow-hidden aspect-video">
+          {project.image ? (
+            <div className="relative w-full h-full">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={index < 3} // Load first 3 images eagerly
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+          ) : (
+            // Fallback when no image is provided
+            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+              <div className="text-4xl">🚀</div>
+            </div>
+          )}
           
           {/* Overlay with links */}
           <div className={`absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${styles.projectOverlay}`}>
@@ -36,7 +53,8 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white text-black rounded-full hover:bg-gray-100 transition-colors"
+                className="p-3 bg-white text-black rounded-full hover:bg-gray-100 transition-colors transform hover:scale-110"
+                aria-label={`View ${project.title} on GitHub`}
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -46,7 +64,8 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors"
+                className="p-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors transform hover:scale-110"
+                aria-label={`View ${project.title} live demo`}
               >
                 <ExternalLink className="w-5 h-5" />
               </a>
