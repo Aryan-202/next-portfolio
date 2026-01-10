@@ -1,47 +1,66 @@
+// components/layouts/footer/footer-links.tsx
+'use client'
+
 import Image from 'next/image'
-import { SOCIAL_LINKS } from '@/data'
+import { assets } from '@/public/assets'
 import styles from './footer.module.css'
-
-// Import icons directly
-import xIcon from '@/public/svgs/twitter-x.svg'
-import githubIcon from '@/public/svgs/github.svg'
-import linkedinIcon from '@/public/svgs/linkedin.svg'
-
-// Map icon names to imported SVG files
-const iconMap: Record<string, any> = {
-  github: githubIcon,
-  linkedin: linkedinIcon,
-  x: xIcon,
-}
 
 export const SocialLinks = () => {
   return (
     <div className={styles.socialLinks}>
-      {SOCIAL_LINKS.map((social) => {
-        const icon = iconMap[social.icon]
-        
-        return (
-          <a
-            key={social.name}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.socialLink}
-            aria-label={`Visit my ${social.name} profile`}
-            title={`Connect on ${social.name}`}
-          >
-            {icon && (
-              <Image
-                src={icon}
-                alt={social.name}
-                width={16}
-                height={16}
-                className={styles.socialIcon}
-              />
-            )}
-          </a>
-        )
-      })}
+      {/* GitHub */}
+      <a
+        href="https://github.com/Aryan-202"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+        aria-label="Visit my GitHub profile"
+        title="Connect on GitHub"
+      >
+        <Image
+          src={assets.logos.github}
+          alt="GitHub"
+          width={16}
+          height={16}
+          className={styles.socialIcon}
+        />
+      </a>
+      
+      {/* LinkedIn */}
+      <a
+        href="https://www.linkedin.com/in/aryanspf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+        aria-label="Visit my LinkedIn profile"
+        title="Connect on LinkedIn"
+      >
+        <Image
+          src={assets.logos.linkedin}
+          alt="LinkedIn"
+          width={16}
+          height={16}
+          className={styles.socialIcon}
+        />
+      </a>
+      
+      {/* X (Twitter) */}
+      <a
+        href="https://x.com/AryanxSenpai"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.socialLink}
+        aria-label="Visit my X (Twitter) profile"
+        title="Connect on X (Twitter)"
+      >
+        <Image
+          src={assets.logos.x}
+          alt="X (Twitter)"
+          width={16}
+          height={16}
+          className={styles.socialIcon}
+        />
+      </a>
     </div>
   )
 }
