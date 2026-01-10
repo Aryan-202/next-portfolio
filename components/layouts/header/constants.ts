@@ -11,7 +11,7 @@ export const NAV_LINKS: NavLinks[] = [
   },
   { 
     name: 'About', 
-    href: '#about', // Changed from '/about' to '#about'
+    href: '#about',
     description: 'Learn about me' 
   },
   { 
@@ -21,7 +21,7 @@ export const NAV_LINKS: NavLinks[] = [
   },
   { 
     name: 'Blog', 
-    href: '/blog', 
+    href: '#blog', 
     description: 'Read my articles' 
   },
   { 
