@@ -46,26 +46,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <Card className="p-8 bg-background/50 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold mb-4">Want to see more?</h3>
-            <p className="text-muted-foreground mb-6">
-              Check out my GitHub profile for more projects and contributions
-            </p>
-            <Button size="lg" className="rounded-full" asChild>
-              <a href="https://github.com/Aryan-202" target="_blank" rel="noopener noreferrer">
-                <Github className="w-5 h-5 mr-2" />
-                View GitHub Profile
-              </a>
-            </Button>
-          </Card>
-        </motion.div>
+        
       </div>
     </section>
   );
