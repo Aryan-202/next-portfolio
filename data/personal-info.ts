@@ -7,5 +7,6 @@ export const PROFILE_INFO = {
     resumeLink:'',
     avatar: '/images/profile/logo.jpg',
     description: '',
-    bio: ''
+    bio: '',
+    location: 'Gorakhpur, Uttar Pradesh'
 } as const

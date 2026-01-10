@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { Button } from "@/components/ui/button";
 import { PROFILE_INFO, SOCIAL_LINKS } from "@/data";
@@ -7,7 +7,10 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-4 pt-20"
+    >
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -26,15 +29,15 @@ const Hero = () => {
               <p className="text-lg text-muted-foreground font-medium">
                 Hello, I'm
               </p>
-              
+
               <h1 className="text-5xl lg:text-6xl font-bold tracking-tight">
                 {PROFILE_INFO.name}
               </h1>
-              
+
               <h2 className="text-2xl lg:text-3xl text-primary font-semibold">
                 {PROFILE_INFO.title}
               </h2>
-              
+
               {/* Fixed: Changed to description or bio */}
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
                 {PROFILE_INFO.description || PROFILE_INFO.bio}
@@ -48,18 +51,16 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="rounded-full px-8 py-6 text-lg font-semibold"
                 asChild
               >
-                <a href="#contact">
-                  Get In Touch
-                </a>
+                <a href="#contact">Get In Touch</a>
               </Button>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 size="lg"
                 className="rounded-full px-8 py-6 text-lg font-semibold"
                 asChild
@@ -81,7 +82,7 @@ const Hero = () => {
               {SOCIAL_LINKS.map((link, index) => {
                 // Try to get the icon component from the imported data
                 const IconComponent = link.icon;
-                
+
                 return (
                   <motion.a
                     key={link.name}
@@ -97,9 +98,9 @@ const Hero = () => {
                     transition={{ delay: 0.8 + index * 0.1 }}
                   >
                     {/* Render the icon if it's a component */}
-                    {typeof IconComponent === 'function' ? (
+                    {typeof IconComponent === "function" ? (
                       <IconComponent className="w-5 h-5" />
-                    ) : typeof link.icon === 'string' ? (
+                    ) : typeof link.icon === "string" ? (
                       // If it's a string, assume it's an icon name or URL
                       <span>{link.icon}</span>
                     ) : null}
@@ -125,33 +126,6 @@ const Hero = () => {
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
-              
-              {/* Optional: Add decorative elements */}
-              <motion.div 
-                className="absolute -top-4 -right-4 w-24 h-24 rounded-full bg-primary/10 -z-10"
-                animate={{ 
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ 
-                  repeat: Infinity,
-                  duration: 5,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.div 
-                className="absolute -bottom-6 -left-6 w-32 h-32 rounded-full bg-primary/5 -z-10"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{ 
-                  repeat: Infinity,
-                  duration: 6,
-                  delay: 0.5,
-                  ease: "easeInOut"
-                }}
-              />
             </div>
           </motion.div>
         </div>

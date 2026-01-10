@@ -11,17 +11,17 @@ export const NAV_LINKS: NavLinks[] = [
   },
   { 
     name: 'About', 
-    href: '/about', 
+    href: '#about',
     description: 'Learn about me' 
   },
   { 
     name: 'Projects', 
-    href: '/projects', 
+    href: '#projects', 
     description: 'View my work' 
   },
   { 
     name: 'Blog', 
-    href: '/blog', 
+    href: '#blog', 
     description: 'Read my articles' 
   },
   { 
