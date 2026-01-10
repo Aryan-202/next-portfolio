@@ -26,7 +26,7 @@ export const NAV_LINKS: NavLinks[] = [
   },
   { 
     name: 'Contact', 
-    href: '/contact', 
+    href: '#contact', 
     description: 'Get in touch' 
   },
 ] as const
