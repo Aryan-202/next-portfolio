@@ -9,5 +9,5 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
-  image: string | StaticImageData; // Accept both types
+  image: string | StaticImageData;
 }

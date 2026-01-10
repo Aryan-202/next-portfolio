@@ -23,28 +23,28 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Aryan-202/DAAI",
     liveUrl: "https://github.com/Aryan-202/DAAI",
     featured: true,
-    image: assets.projects.daai // Use the imported image
+    image: assets.projects.daai
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce application with user authentication, payment integration, and admin dashboard.",
-    category: "Full Stack",
-    technologies: ["Next.js", "Node.js", "PostgreSQL", "Stripe", "Prisma"],
+    title: "Leades Scrapper",
+    description: "scrapp leads for your business ideas",
+    category: "n8n services",
+    technologies: ["linkedin api", "google sheets",],
     githubUrl: "https://github.com/Aryan-202/ecommerce",
     liveUrl: "https://shop-aryan.vercel.app",
     featured: true,
-    image: '/images/projects/ecommerce.jpg' // Example path for other projects
+    image: assets.projects.lead_scrapper
   },
   {
     id: 3,
-    title: "Task Management App",
+    title: "My Portfolio",
     description: "A productivity app for managing tasks with drag & drop functionality and real-time updates.",
     category: "Web App",
     technologies: ["React", "Firebase", "Material UI", "React DnD"],
     githubUrl: "https://github.com/Aryan-202/task-manager",
     liveUrl: "https://tasks-aryan.vercel.app",
     featured: true,
-    image: '/images/projects/task-manager.jpg' 
+    image: assets.projects.portfolio
   },
 ];
