@@ -80,7 +80,7 @@ const Hero = () => {
               className="flex gap-4 pt-4"
             >
               {SOCIAL_LINKS.map((link, index) => {
-                // Try to get the icon component from the imported data
+                
                 const IconComponent = link.icon;
 
                 return (
