@@ -13,7 +13,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "DAAI",
-    description: "daai is an AI-powered spreadsheet engine where natural language prompts trigger structured data operations through a deterministic Python backend.",
+    description: "AI spreadsheet that runs on commands, not code.",
     category: "GenAI",
     technologies: ["Next.js", "TypeScript", "Jupyter", "Framer Motion"],
     githubUrl: "https://github.com/Aryan-202/DAAI",
