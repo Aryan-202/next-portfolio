@@ -39,9 +39,8 @@ const ContactForm = () => {
     setError('');
 
     try {
-      // Note: You'll need to set up your own backend endpoint for this
-      // or use a service like Formspree, EmailJS, etc.
-      const response = await fetch('https://aryans-portfolio-9srv.onrender.com/api/contact', {
+      // Use Next.js API route
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
