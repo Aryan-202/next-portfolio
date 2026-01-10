@@ -12,12 +12,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: "A modern portfolio website built with Next.js 14 and Tailwind CSS, featuring animations and responsive design.",
-    category: "Web Development",
+    title: "DAAI",
+    description: "daai is an AI-powered spreadsheet engine where natural language prompts trigger structured data operations through a deterministic Python backend.",
+    category: "GenAI",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "https://github.com/Aryan-202/portfolio",
-    liveUrl: "https://aryan-portfolio.vercel.app",
+    githubUrl: "https://github.com/Aryan-202/DAAI",
+    liveUrl: "https://github.com/Aryan-202/DAAI",
     featured: true
   },
   {
