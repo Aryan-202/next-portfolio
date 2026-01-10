@@ -39,31 +39,6 @@ const Contact = () => {
             </Card>
           </motion.div>
         </div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center mt-16"
-        >
-          <Card className="p-8 bg-background/50 backdrop-blur-sm">
-            <h3 className="text-2xl font-semibold mb-4">Ready to Start a Project?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              I'm always interested in new opportunities and challenges. 
-              Whether you have a project in mind or just want to say hello, 
-              I'd love to hear from you!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="rounded-full" asChild>
-                <a href={`mailto:${PROFILE_INFO.email}`}>
-                  <Mail className="w-5 h-5 mr-2" />
-                  Send Email
-                </a>
-              </Button>
-            </div>
-          </Card>
-        </motion.div>
       </div>
     </section>
   );
