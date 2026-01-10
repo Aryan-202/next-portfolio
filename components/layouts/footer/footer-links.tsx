@@ -1,4 +1,4 @@
-// components/layouts/footer/footer-links.tsx
+
 'use client'
 
 import Image from 'next/image'

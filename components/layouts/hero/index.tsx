@@ -98,12 +98,12 @@ const Hero = () => {
                     transition={{ delay: 0.8 + index * 0.1 }}
                   >
                     {/* Render the icon if it's a component */}
-                    {typeof IconComponent === "function" ? (
+                    {/* {typeof IconComponent === "function" ? (
                       <IconComponent className="w-5 h-5" />
                     ) : typeof link.icon === "string" ? (
                       // If it's a string, assume it's an icon name or URL
                       <span>{link.icon}</span>
-                    ) : null}
+                    ) : null} */}
                   </motion.a>
                 );
               })}
