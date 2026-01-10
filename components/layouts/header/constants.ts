@@ -11,12 +11,12 @@ export const NAV_LINKS: NavLinks[] = [
   },
   { 
     name: 'About', 
-    href: '/about', 
+    href: '#about', // Changed from '/about' to '#about'
     description: 'Learn about me' 
   },
   { 
     name: 'Projects', 
-    href: '/projects', 
+    href: '#projects', 
     description: 'View my work' 
   },
   { 

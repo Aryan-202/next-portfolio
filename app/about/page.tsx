@@ -1,8 +1,11 @@
 import React from 'react'
+import About from '@/components/layouts/about'
 
 const about = () => {
   return (
-    <div>about</div>
+    <div>
+        <About />
+    </div>
   )
 }
 
