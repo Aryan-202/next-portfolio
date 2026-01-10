@@ -73,41 +73,34 @@ const Hero = () => {
             </motion.div>
 
             {/* Social Links - Fixed */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-              className="flex gap-4 pt-4"
-            >
-              {SOCIAL_LINKS.map((link, index) => {
-                
-                const IconComponent = link.icon;
+          
 
-                return (
-                  <motion.a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 rounded-full border hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 flex items-center justify-center"
-                    aria-label={`Visit my ${link.name}`}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
-                  >
-                    {/* Render the icon if it's a component */}
-                    {/* {typeof IconComponent === "function" ? (
-                      <IconComponent className="w-5 h-5" />
-                    ) : typeof link.icon === "string" ? (
-                      // If it's a string, assume it's an icon name or URL
-                      <span>{link.icon}</span>
-                    ) : null} */}
-                  </motion.a>
-                );
-              })}
-            </motion.div>
+{/* Social Links - Fixed */}
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.6, duration: 0.5 }}
+  className="flex gap-4 pt-4"
+>
+  {SOCIAL_LINKS.map((link, index) => (
+    <motion.a
+      key={link.name}
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="p-3 rounded-full border hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 flex items-center justify-center"
+      aria-label={`Visit my ${link.name}`}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8 + index * 0.1 }}
+    >
+      {/* Display social media platform name as text for now */}
+      <span className="text-sm font-medium">{link.name}</span>
+    </motion.a>
+  ))}
+</motion.div>
           </motion.div>
 
           {/* Right Content - Avatar/Image */}

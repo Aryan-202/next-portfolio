@@ -1,10 +1,9 @@
 import { assets } from "@/public/assets";
-import React from "react";
 
 export interface SocialLinks {
   name: string;
   url: string;
-  icon: string;
+  icon: string; 
 }
 
 export const SOCIAL_LINKS: SocialLinks[] = [
