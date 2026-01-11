@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { FOOTER_LINKS, FOOTER_TEXT, CONTACT_INFO } from './constants'
+import { FOOTER_LINKS, FOOTER_TEXT, } from './constants'
 import { SocialLinks } from './footer-links'
 import styles from './footer.module.css'
 

@@ -23,21 +23,17 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-
-    // Configure email transporter
-    // Using Gmail as example - you'll need to set up App Password
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER, // Your Gmail address
-        pass: process.env.EMAIL_PASS, // Your Gmail App Password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
-    // Email to yourself
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Send to yourself
+      to: process.env.EMAIL_USER,
       subject: `Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
