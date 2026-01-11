@@ -4,7 +4,7 @@ export const PROFILE_INFO = {
     profileImage: '/images/profile/logo.jpg',
     mobile: '+91 9455289155',
     title: 'Entrepreneur',
-    resumeLink:'',
+    resumeLink:'/resume/Aryan Vishwakarma.pdf',
     avatar: '/images/profile/logo.jpg',
     description: '',
     bio: '',
