@@ -6,7 +6,7 @@ export const PROFILE_INFO = {
     title: 'Entrepreneur',
     resumeLink:'/resume/Aryan Vishwakarma.pdf',
     avatar: '/images/profile/logo.jpg',
-    description: 'I provide n8n, web and mobile app services as b2b2c',
+    description: 'Digital Innovator building AI-first solutions that transform business workflows into intelligent systems',
     bio: 'Let it all be ruin, so long as I reign; I will never be a slave.',
     location: 'Gorakhpur, Uttar Pradesh'
 } as const
