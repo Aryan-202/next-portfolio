@@ -4,8 +4,24 @@ import { Button } from "@/components/ui/button";
 import { PROFILE_INFO, SOCIAL_LINKS } from "@/data";
 import { Download } from "lucide-react";
 import { motion } from "motion/react";
+import SplitText from "@/components/SplitText";
+import { useState, useEffect } from "react";
+
+const TITLES = ["Trader", "Entrepreneur", "Businessman", "Content Creator"];
 
 const Hero = () => {
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitleIndex((prev) => (prev + 1) % TITLES.length);
+      setKey((prev) => prev + 1);
+    }, 3000); // Change title every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
@@ -34,11 +50,23 @@ const Hero = () => {
                 {PROFILE_INFO.name}
               </h1>
 
-              <h2 className="text-2xl lg:text-3xl text-primary font-semibold">
-                {PROFILE_INFO.title}
-              </h2>
+              <div className="h-[60px] flex items-center">
+                <SplitText
+                  key={key}
+                  text={TITLES[currentTitleIndex]}
+                  className="text-2xl lg:text-3xl font-semibold text-primary"
+                  delay={50}
+                  duration={0.5}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  rootMargin="-100px"
+                  tag="h2"
+                />
+              </div>
 
-              {/* Fixed: Changed to description or bio */}
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
                 {PROFILE_INFO.description || PROFILE_INFO.bio}
               </p>
@@ -72,35 +100,31 @@ const Hero = () => {
               </Button>
             </motion.div>
 
-            {/* Social Links - Fixed */}
-          
-
-{/* Social Links - Fixed */}
-<motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.6, duration: 0.5 }}
-  className="flex gap-4 pt-4"
->
-  {SOCIAL_LINKS.map((link, index) => (
-    <motion.a
-      key={link.name}
-      href={link.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="p-3 rounded-full border hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 flex items-center justify-center"
-      aria-label={`Visit my ${link.name}`}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.8 + index * 0.1 }}
-    >
-      {/* Display social media platform name as text for now */}
-      <span className="text-sm font-medium">{link.name}</span>
-    </motion.a>
-  ))}
-</motion.div>
+            {/* Social Links */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="flex gap-4 pt-4"
+            >
+              {SOCIAL_LINKS.map((link, index) => (
+                <motion.a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full border hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 flex items-center justify-center"
+                  aria-label={`Visit my ${link.name}`}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8 + index * 0.1 }}
+                >
+                  <span className="text-sm font-medium">{link.name}</span>
+                </motion.a>
+              ))}
+            </motion.div>
           </motion.div>
 
           {/* Right Content - Avatar/Image */}
