@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
-  // Ensure component is mounted to avoid hydration mismatch
+
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -27,7 +27,6 @@ const Navbar = () => {
   }
 
   if (!mounted) {
-    // Return a placeholder with the same dimensions to avoid layout shift
     return (
       <header className={styles.header}>
         <div className={styles.container}>
