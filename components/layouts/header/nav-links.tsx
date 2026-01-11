@@ -17,20 +17,20 @@ export const NavLinks: React.FC<NavLinksProps> = ({
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    // For home page
+    
     if (href === "/") {
       return pathname === href;
     }
-    // For hash links on home page
+    
     if (href.startsWith("#")) {
       return pathname === "/" && href === window.location.hash;
     }
-    // For other routes
+    
     return pathname === href;
   };
 
   const handleClick = (href: string) => {
-    // If it's a hash link and we're not on home page, navigate to home first
+    
     if (href.startsWith("#") && pathname !== "/") {
       window.location.href = `/${href}`;
     }
