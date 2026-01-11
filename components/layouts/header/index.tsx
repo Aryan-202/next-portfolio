@@ -56,7 +56,7 @@ const Navbar = () => {
               <div className={styles.profileImage}>
                 <Image
                   src={PROFILE_INFO.profileImage}
-                  alt={`${PROFILE_INFO.name} - ${PROFILE_INFO.title}`}
+                  alt={`${PROFILE_INFO.name} - ${PROFILE_INFO.subtitle}`}
                   fill
                   className="object-cover"
                   sizes="40px"
@@ -65,7 +65,7 @@ const Navbar = () => {
               </div>
               <div>
                 <h1 className={styles.name}>{PROFILE_INFO.name}</h1>
-                <p className={styles.title}>{PROFILE_INFO.title}</p>
+                <p className={styles.title}>{PROFILE_INFO.subtitle}</p>
               </div>
             </Link>
           </div>

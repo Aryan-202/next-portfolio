@@ -7,7 +7,7 @@ import { motion } from "motion/react";
 import SplitText from "@/components/SplitText";
 import { useState, useEffect } from "react";
 
-const TITLES = ["Trader", "Entrepreneur", "Businessman", "Content Creator"];
+const TITLES = PROFILE_INFO.title;
 
 const Hero = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
