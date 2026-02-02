@@ -2,9 +2,7 @@
 
 import { motion } from "motion/react";
 import { projects } from "@/data/projects";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Star } from "lucide-react";
+import {  Star } from "lucide-react";
 import ProjectCard from "./project-card";
 
 const Projects = () => {

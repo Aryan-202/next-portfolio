@@ -21,7 +21,7 @@ export const projects: Project[] = [
     category: "GenAI",
     technologies: ["Next.js", "TypeScript", "Jupyter", "Framer Motion"],
     githubUrl: "https://github.com/Aryan-202/DAAI",
-    liveUrl: "https://github.com/Aryan-202/DAAI",
+    liveUrl: "daai-sheets.vercel.app ",
     featured: true,
     image: assets.projects.daai
   },
@@ -41,9 +41,9 @@ export const projects: Project[] = [
     title: "My Portfolio",
     description: "A productivity app for managing tasks with drag & drop functionality and real-time updates.",
     category: "Web App",
-    technologies: ["React", "Firebase", "Material UI", "React DnD"],
-    githubUrl: "https://github.com/Aryan-202/task-manager",
-    liveUrl: "https://tasks-aryan.vercel.app",
+    technologies: ["Next.js", "SupaBase", "Motion", "TypeScript"],
+    githubUrl: "https://github.com/Aryan-202/next-portfolio.git",
+    liveUrl: "aryan-vishwakarma.vercel.app ",
     featured: true,
     image: assets.projects.portfolio
   },
