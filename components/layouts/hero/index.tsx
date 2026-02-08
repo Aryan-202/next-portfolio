@@ -31,11 +31,11 @@ const Hero = () => {
     >
       <div className="absolute inset-0 z-0 opacity-40">
         <LightRays
-          raysOrigin="top-left"
+          raysOrigin="top-center"
           raysColor="#ffffff"
-          raysSpeed={0.5}
-          lightSpread={2.5}
-          rayLength={12.5}
+          raysSpeed={1.90}
+          lightSpread={4.0}
+          rayLength={3.75}
           pulsating={true}
           followMouse={true}
         />
