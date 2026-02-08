@@ -1,69 +1,125 @@
-
 "use client";
 
 import LegalPage from "@/components/legal/LegalPage";
 import { PROFILE_INFO } from "@/data";
 
 export default function TermsOfService() {
-    const currentDate = new Date().toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric'
+    const currentDate = new Date().toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
     });
 
     return (
         <LegalPage title="Terms of Service" lastUpdated={currentDate}>
+            {/* 1. Agreement */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground">1. Agreement to Terms</h2>
+                <h2 className="text-2xl font-semibold text-foreground">
+                    1. Agreement to Terms
+                </h2>
                 <p>
-                    By accessing this website, you are agreeing to be bound by these Terms of Service, all applicable laws and regulations,
-                    and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of
-                    these terms, you are prohibited from using or accessing this site.
+                    By accessing or using this website, you agree to be bound by
+                    these Terms of Service and all applicable laws and
+                    regulations. If you do not agree with any part of these
+                    terms, you must not use this website.
                 </p>
             </section>
 
+            {/* 2. Services */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground">2. Intellectual Property Rights</h2>
+                <h2 className="text-2xl font-semibold text-foreground">
+                    2. Services
+                </h2>
                 <p>
-                    Unless otherwise stated, {PROFILE_INFO.name} owns the intellectual property rights for all material on this website.
-                    All intellectual property rights are reserved. You may access this from the website for your own personal use
-                    subjected to restrictions set in these terms and conditions.
+                    This website showcases the services offered by{" "}
+                    {PROFILE_INFO.name}, which may include website development,
+                    automation solutions, consulting, and related services. All
+                    services are provided on a project or contract basis, with
+                    scope, timelines, and pricing agreed upon before work
+                    begins.
                 </p>
             </section>
 
+            {/* 3. No Guarantee */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground">3. User Representations</h2>
+                <h2 className="text-2xl font-semibold text-foreground">
+                    3. No Guarantee of Results
+                </h2>
                 <p>
-                    By using the site, you represent and warrant that: (1) all registration information you submit will be true, accurate,
-                    current, and complete; (2) you will maintain the accuracy of such information and promptly update such registration
-                    information as necessary.
+                    While best efforts are made to deliver high-quality work,
+                    {PROFILE_INFO.name} does not guarantee specific results,
+                    including but not limited to increased revenue, leads,
+                    traffic, or business growth. Outcomes depend on multiple
+                    factors beyond our control.
                 </p>
             </section>
 
+            {/* 4. Client Responsibilities */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground">4. Prohibited Activities</h2>
+                <h2 className="text-2xl font-semibold text-foreground">
+                    4. Client Responsibilities
+                </h2>
                 <p>
-                    You may not access or use the site for any purpose other than that for which we make the site available. The site
-                    may not be used in connection with any commercial endeavors except those that are specifically endorsed or
-                    approved by us.
+                    Clients are responsible for providing accurate information,
+                    content, approvals, and feedback required to complete a
+                    project. Delays caused by missing information or late
+                    responses from the client may impact project timelines and
+                    delivery.
                 </p>
             </section>
 
+            {/* 5. Payments */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground">5. Disclaimer</h2>
+                <h2 className="text-2xl font-semibold text-foreground">
+                    5. Payments & Refunds
+                </h2>
                 <p>
-                    The materials on this website are provided on an &apos;as is&apos; basis. {PROFILE_INFO.name} makes no warranties,
-                    expressed or implied, and hereby disclaims and negates all other warranties including, without limitation,
-                    implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement
-                    of intellectual property or other violation of rights.
+                    Payment terms, pricing, and advance requirements will be
+                    clearly communicated and agreed upon before the start of
+                    any project. Unless stated otherwise in writing, all
+                    payments made are non-refundable.
                 </p>
             </section>
 
+            {/* 6. Intellectual Property */}
             <section className="space-y-4">
-                <h2 className="text-2xl font-semibold text-foreground">6. Governing Law</h2>
+                <h2 className="text-2xl font-semibold text-foreground">
+                    6. Intellectual Property
+                </h2>
                 <p>
-                    These terms and conditions are governed by and construed in accordance with the laws of India and you
-                    irrevocably submit to the exclusive jurisdiction of the courts in {PROFILE_INFO.location}.
+                    Unless otherwise agreed in writing, all intellectual
+                    property related to this website remains the property of{" "}
+                    {PROFILE_INFO.name}. Upon full payment, clients receive
+                    rights to the final deliverables as defined in the project
+                    agreement. {PROFILE_INFO.name} reserves the right to display
+                    completed work in portfolios or case studies.
+                </p>
+            </section>
+
+            {/* 7. Limitation of Liability */}
+            <section className="space-y-4">
+                <h2 className="text-2xl font-semibold text-foreground">
+                    7. Limitation of Liability
+                </h2>
+                <p>
+                    {PROFILE_INFO.name} shall not be liable for any indirect,
+                    incidental, special, or consequential damages arising from
+                    the use of this website or provided services, including but
+                    not limited to loss of data, revenue, or business
+                    opportunities.
+                </p>
+            </section>
+
+            {/* 8. Governing Law */}
+            <section className="space-y-4">
+                <h2 className="text-2xl font-semibold text-foreground">
+                    8. Governing Law
+                </h2>
+                <p>
+                    These Terms of Service are governed by and construed in
+                    accordance with the laws of India. Any disputes shall be
+                    subject to the exclusive jurisdiction of the courts located
+                    in {PROFILE_INFO.location}.
                 </p>
             </section>
         </LegalPage>
