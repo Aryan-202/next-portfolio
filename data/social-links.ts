@@ -3,7 +3,7 @@ import { assets } from "@/public/assets";
 export interface SocialLinks {
   name: string;
   url: string;
-  icon: string; 
+  icon: any;
 }
 
 export const SOCIAL_LINKS: SocialLinks[] = [
@@ -22,4 +22,9 @@ export const SOCIAL_LINKS: SocialLinks[] = [
     url: "https://x.com/AryanxSenpai",
     icon: assets.logos.x,
   },
-] as const;
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/_aryan._.vishwakarma_/",
+    icon: assets.logos.instagram,
+  },
+];

@@ -7,6 +7,7 @@ import { motion } from "motion/react";
 import SplitText from "@/components/SplitText";
 import { useState, useEffect } from "react";
 import LightRays from "@/components/LightRays";
+import Image from "next/image";
 
 const TITLES = PROFILE_INFO.title;
 
@@ -133,7 +134,13 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 + index * 0.1 }}
                 >
-                  <span className="text-sm font-medium">{link.name}</span>
+                  <Image
+                    src={link.icon}
+                    alt={link.name}
+                    width={20}
+                    height={20}
+                    className="w-5 h-5 dark:invert"
+                  />
                 </motion.a>
               ))}
             </motion.div>

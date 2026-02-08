@@ -6,17 +6,19 @@ import envelope from './svgs/envelope.svg'
 import daai from './projects/daai-cropped.png'
 import lead_scrapper from './projects/lead-scrapper.jpg'
 import portfolio from './projects/portfolio.png'
+import instagram from './svgs/instagram.svg'
 
 export const assets = {
   logos: {
-    x,
-    github,
-    linkedin,
-    envelope
+    x: x,
+    github: github,
+    linkedin: linkedin,
+    envelope: envelope,
+    instagram: instagram
   },
   projects: {
-    daai,
-    lead_scrapper,
-    portfolio
+    daai: daai,
+    lead_scrapper: lead_scrapper,
+    portfolio: portfolio
   }
 }
