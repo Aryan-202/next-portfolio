@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aryan Vishwakarma | Entrepreneur",
-  description: "Entrepreneur & Digital Innovator building the future of digital experiences",
+  title: "Aryan Vishwakarma | Freelancer",
+  description: "Freelancer & Digital Innovator building the future of digital experiences",
 };
 
 export default function RootLayout({
