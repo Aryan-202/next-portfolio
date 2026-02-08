@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Star } from "lucide-react";
 import Image from "next/image";
-import type { Project } from "@/data/projects";
+import type { Project } from "@/types/projects";
 import styles from "./project.module.css";
 
 interface ProjectCardProps {
@@ -37,15 +37,15 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
                 priority={index < 3} // Load first 3 images eagerly
               />
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ) : (
             // Fallback when no image is provided
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
+            <div className="w-full h-full bg-linear-to-br from-primary/20 to-primary/5 flex items-center justify-center">
               <div className="text-4xl">🚀</div>
             </div>
           )}
-          
+
           {/* Overlay with links */}
           <div className={`absolute inset-0 bg-black/60 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${styles.projectOverlay}`}>
             {project.githubUrl && (
@@ -95,7 +95,7 @@ const ProjectCard = ({ project, index, featured = false }: ProjectCardProps) => 
           <h4 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
             {project.title}
           </h4>
-          
+
           <p className="text-muted-foreground mb-4 line-clamp-3">
             {project.description}
           </p>
