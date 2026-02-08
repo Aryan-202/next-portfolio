@@ -6,6 +6,7 @@ import { Download } from "lucide-react";
 import { motion } from "motion/react";
 import SplitText from "@/components/SplitText";
 import { useState, useEffect } from "react";
+import LightRays from "@/components/LightRays";
 
 const TITLES = PROFILE_INFO.title;
 
@@ -25,9 +26,20 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 pt-20"
+      className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden"
     >
-      <div className="container mx-auto max-w-6xl">
+      <div className="absolute inset-0 z-0 opacity-40">
+        <LightRays
+          raysOrigin="top-left"
+          raysColor="#ffffff"
+          raysSpeed={0.5}
+          lightSpread={2.5}
+          rayLength={12.5}
+          pulsating={true}
+          followMouse={true}
+        />
+      </div>
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -136,7 +148,7 @@ const Hero = () => {
           >
             <div className="relative">
               {/* Main Avatar */}
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center overflow-hidden">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-linear-to-br from-primary/20 to-primary/5 border-2 border-primary/20 flex items-center justify-center overflow-hidden">
                 <img
                   src={PROFILE_INFO.avatar}
                   alt={`Portrait of ${PROFILE_INFO.name}`}
