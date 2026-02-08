@@ -2,10 +2,7 @@
 
 import { motion } from "motion/react";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
 import ContactForm from "./contact-form";
-import { PROFILE_INFO } from "@/data";
 
 const Contact = () => {
   return (
