@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'motion/react'
-import { FEEDBACK_DATA } from './constants'
+import { FEEDBACK_DATA } from '@/data/feedback-data'
 import FeedbackCard from './feedback-card'
 import styles from './feedback.module.css'
 

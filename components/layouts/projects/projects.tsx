@@ -9,7 +9,7 @@ const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
-    <section id="projects" className="py-20 px-4 bg-muted/30">
+    <section id="projects" className="py-20 px-4 bg-muted/15">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div

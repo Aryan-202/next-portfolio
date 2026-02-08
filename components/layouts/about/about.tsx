@@ -19,7 +19,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.1 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">About Me</h2>
@@ -35,7 +35,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <Card className="p-6 lg:p-8 h-full">
               <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
@@ -85,7 +85,7 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <Card className="p-6 lg:p-8 h-full">
               <h4 className="text-2xl font-semibold mb-6">Personal Details</h4>
@@ -160,7 +160,7 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
           className="mt-16"
         >
           <Card className="p-6 lg:p-8 text-center">

@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'motion/react'
 import { Star, Quote } from 'lucide-react'
-import { Feedback } from './constants'
+import { Feedback } from '@/data/feedback-data'
 import styles from './feedback.module.css'
 
 interface FeedbackCardProps {
