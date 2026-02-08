@@ -2,9 +2,10 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { FOOTER_LINKS, FOOTER_TEXT, } from './constants'
+import { FOOTER_LINKS, FOOTER_TEXT, PROFILE_INFO } from './constants'
 import { SocialLinks } from './footer-links'
 import styles from './footer.module.css'
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -17,11 +18,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className={styles.brandSection}>
             <Link href="/" className={styles.brandLink}>
-              <h2 className={styles.brandName}>Aryan Vishwakarma</h2>
-              <p className={styles.brandTitle}>Entrepreneur</p>
+              <h2 className={styles.brandName}>{PROFILE_INFO.name}</h2>
+              <p className={styles.brandTitle}>{PROFILE_INFO.subtitle}</p>
             </Link>
             <p className={styles.brandDescription}>
-              {FOOTER_TEXT.brandDescription}
+              {PROFILE_INFO.description}
             </p>
           </div>
 
@@ -30,20 +31,6 @@ const Footer = () => {
             <h3 className={styles.sectionTitle}>Quick Links</h3>
             <ul className={styles.linksList}>
               {FOOTER_LINKS.quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className={styles.link} title={link.description}>
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div className={styles.linksSection}>
-            <h3 className={styles.sectionTitle}>Resources</h3>
-            <ul className={styles.linksList}>
-              {FOOTER_LINKS.resources.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className={styles.link} title={link.description}>
                     {link.name}

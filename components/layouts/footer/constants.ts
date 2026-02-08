@@ -29,16 +29,9 @@ export const FOOTER_LINKS = {
     { name: 'Contact', href: '/contact', description: 'Get in touch' },
   ] as const,
   
-  resources: [
-    { name: 'Documentation', href: '/docs', description: 'Technical documentation' },
-    { name: 'Tutorials', href: '/tutorials', description: 'Learning resources' },
-    { name: 'Case Studies', href: '/case-studies', description: 'Project case studies' },
-  ] as const,
-  
   legal: [
     { name: 'Privacy Policy', href: '/privacy', description: 'Privacy policy' },
     { name: 'Terms of Service', href: '/terms', description: 'Terms and conditions' },
-    { name: 'Cookie Policy', href: '/cookies', description: 'Cookie usage policy' },
   ] as const,
 } as const;
 
@@ -56,5 +49,5 @@ export const CONTACT_INFO: ContactInfo = {
   availability: 'Available for freelance work',
 } as const;
 
-// Export from data for convenience
+
 export { SOCIAL_LINKS, PROFILE_INFO };
