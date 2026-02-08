@@ -1,17 +1,5 @@
 import { assets } from "@/public/assets";
-import { StaticImageData } from "next/image";
-
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  featured: boolean;
-  image: string | StaticImageData; 
-}
+import { Project } from "@/types/projects";
 
 export const projects: Project[] = [
   {
