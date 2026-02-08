@@ -19,8 +19,8 @@ export const projects: Project[] = [
     description: "scrapp leads for your business ideas",
     category: "n8n services",
     technologies: ["linkedin api", "google sheets",],
-    githubUrl: "https://github.com/Aryan-202/ecommerce",
-    liveUrl: "https://shop-aryan.vercel.app",
+    githubUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
+    liveUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     featured: true,
     image: assets.projects.lead_scrapper
   },
