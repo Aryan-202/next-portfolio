@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aryan Vishwakarma | Freelancer",
-  description: "Freelancer & Digital Innovator building the future of digital experiences",
+  title: "Aryan Vishwakarma | Automation Engineer",
+  description: "Automation Engineer helping businesses increase leads, reduce manual work, and scale operations using Python, APIs & AI",
 };
 
 export default function RootLayout({
@@ -34,26 +34,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="relative">
-              {/* Background with lower opacity */}
-              <div className="fixed inset-0 -z-10">
-                <Background />
-              </div>
-              
-              {/* Content */}
-              <div className="relative z-10">
-                <Navbar />
-                {children}
-                <Footer />
-              </div>
+        <ThemeProvider>
+          <div className="relative">
+            {/* Background with lower opacity */}
+            <div className="fixed inset-0 -z-10">
+              <Background />
             </div>
-          </ThemeProvider>
+
+            {/* Content */}
+            <div className="relative z-10">
+              <Navbar />
+              {children}
+              <Footer />
+            </div>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

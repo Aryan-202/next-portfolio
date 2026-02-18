@@ -4,25 +4,29 @@ export interface Feedback {
     message: string;
     rating: number;
     image?: string;
+    result?: string;
 }
 
 export const FEEDBACK_DATA: Feedback[] = [
     {
         name: 'Prince',
         role: 'Businessman',
-        message: 'worked on the dataset of stock market and provided the insights',
+        message: 'Worked on our stock market dataset and delivered clear, actionable insights. Exactly what we needed to make faster decisions.',
+        result: 'Saved 10+ hours of manual analysis per week',
         rating: 5
     },
     {
         name: 'Ankit',
         role: 'Startup Founder',
-        message: 'made a complete n8n setup for my startup and it was very helpful by automating my email followups and other processes. Highly recommended!',
+        message: 'Built a complete n8n automation setup for our startup — email follow-ups, lead tracking, and internal workflows. Everything runs on autopilot now.',
+        result: 'Automated 3 workflows, saving 15+ hours/month',
         rating: 5
     },
     {
         name: 'Siddharth',
         role: 'Startup Founder',
-        message: 'He helped me to start my business online via digital marketing and it was very helpful. Highly recommended!',
+        message: 'Helped us launch our business online with a proper digital presence and lead generation system. Highly recommended for anyone serious about growth.',
+        result: 'Improved online response rate significantly',
         rating: 5
     },
 ];

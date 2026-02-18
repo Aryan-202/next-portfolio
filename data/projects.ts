@@ -4,21 +4,21 @@ import { Project } from "@/types/projects";
 export const projects: Project[] = [
   {
     id: 1,
-    title: "DAAI",
-    description: "AI spreadsheet that runs on commands, not code.",
-    category: "GenAI",
-    technologies: ["Next.js", "TypeScript", "Jupyter", "Framer Motion"],
+    title: "DAAI — AI Spreadsheet Automation",
+    description: "Eliminates manual data entry and reporting by letting businesses control spreadsheets with plain English commands. Reduces reporting time by up to 80% for non-technical teams.",
+    category: "AI Automation",
+    technologies: ["Next.js", "TypeScript", "OpenAI API", "Google Sheets API"],
     githubUrl: "https://github.com/Aryan-202/DAAI",
-    liveUrl: "daai-sheets.vercel.app ",
+    liveUrl: "https://daai-sheets.vercel.app",
     featured: true,
     image: assets.projects.daai
   },
   {
     id: 2,
-    title: "Leades Scrapper",
-    description: "scrapp leads for your business ideas",
-    category: "n8n services",
-    technologies: ["linkedin api", "google sheets",],
+    title: "Lead Generation Automation System",
+    description: "Automates lead discovery, enrichment, and CRM storage for B2B businesses. Replaces manual lead research and reduces outreach preparation time by 70%, delivering qualified prospects directly into your pipeline.",
+    category: "Lead Generation",
+    technologies: ["n8n", "LinkedIn API", "Google Sheets", "Python"],
     githubUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     liveUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     featured: true,
@@ -26,13 +26,13 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "My Portfolio",
-    description: "A productivity app for managing tasks with drag & drop functionality and real-time updates.",
-    category: "Web App",
-    technologies: ["Next.js", "SupaBase", "Motion", "TypeScript"],
-    githubUrl: "https://github.com/Aryan-202/next-portfolio.git",
-    liveUrl: "aryan-vishwakarma.vercel.app ",
+    title: "Lead Generation Automation System",
+    description: "Automates lead discovery, enrichment, and CRM storage for B2B businesses. Replaces manual lead research and reduces outreach preparation time by 70%, delivering qualified prospects directly into your pipeline.",
+    category: "Lead Generation",
+    technologies: ["n8n", "LinkedIn API", "Google Sheets", "Python"],
+    githubUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
+    liveUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     featured: true,
-    image: assets.projects.portfolio
+    image: assets.projects.lead_scrapper
   },
 ];

@@ -3,11 +3,11 @@ export const PROFILE_INFO = {
     email: 'aryanvishwakarma275@gmail.com',
     profileImage: '/images/profile/logo.jpg',
     mobile: '+91 9455289155',
-    title:  ["Trader", "Entrepreneur", "Businessman", "Content Creator"],
-    subtitle: 'Freelancer',
-    resumeLink:'/resume/resume update 2026.docx',
+    title: ["Automation Engineer", "Lead Generation Expert", "AI Workflow Builder", "Python & API Specialist"],
+    subtitle: 'Automation Engineer',
+    resumeLink: '/resume/resume update 2026.docx',
     avatar: '/images/profile/profile.jpeg',
-    description: 'Digital Innovator building AI-first solutions that transform business workflows into intelligent systems',
+    description: 'Automation Engineer helping businesses increase leads, reduce manual work, and scale operations using Python, APIs & AI',
     bio: 'Let it all be ruin, so long as I reign; I will never be a slave.',
     location: 'Gorakhpur, Uttar Pradesh'
 } as const

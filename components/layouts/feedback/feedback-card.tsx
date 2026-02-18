@@ -24,6 +24,15 @@ const FeedbackCard = ({ feedback, index }: FeedbackCardProps) => {
                 <Quote size={24} fill="currentColor" opacity={0.1} />
             </div>
 
+            {feedback.result && (
+                <div className="mb-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-xs font-semibold">
+                    <span>✓</span>
+                    <span>{feedback.result}</span>
+                </div>
+            )}
+
+            <p className={styles.message}>{feedback.message}</p>
+
             <div className={styles.rating}>
                 {Array.from({ length: 5 }).map((_, i) => (
                     <Star
@@ -34,8 +43,6 @@ const FeedbackCard = ({ feedback, index }: FeedbackCardProps) => {
                     />
                 ))}
             </div>
-
-            <p className={styles.message}>{feedback.message}</p>
 
             <div className={styles.footer}>
                 <div className={styles.avatar}>
