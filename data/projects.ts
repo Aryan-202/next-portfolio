@@ -24,15 +24,15 @@ export const projects: Project[] = [
     featured: true,
     image: assets.projects.lead_scrapper
   },
-  {
+    {
     id: 3,
-    title: "Lead Generation Automation System",
-    description: "Automates lead discovery, enrichment, and CRM storage for B2B businesses. Replaces manual lead research and reduces outreach preparation time by 70%, delivering qualified prospects directly into your pipeline.",
-    category: "Lead Generation",
-    technologies: ["n8n", "LinkedIn API", "Google Sheets", "Python"],
-    githubUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
-    liveUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
+    title: "n8n AI-Powered Web Crawler Bot",
+    description: "An intelligent web crawler bot built with n8n that extracts all URLs from any webpage and delivers results via Telegram. Features AI-powered URL extraction, anti-bot protection handling, and automatic CSV generation.",
+    category: "Web Automation",
+    technologies: ["n8n", "OpenRouter AI", "Telegram API", "Google Sheets", "JavaScript"],
+    githubUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
+    liveUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     featured: true,
-    image: assets.projects.lead_scrapper
-  },
+    image: "assets/projects/n8n_crawler.png"
+  }
 ];
