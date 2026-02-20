@@ -24,7 +24,7 @@ export const projects: Project[] = [
     featured: true,
     image: assets.projects.lead_scrapper
   },
-    {
+  {
     id: 3,
     title: "n8n AI-Powered Web Crawler Bot",
     description: "An intelligent web crawler bot built with n8n that extracts all URLs from any webpage and delivers results via Telegram. Features AI-powered URL extraction, anti-bot protection handling, and automatic CSV generation.",
@@ -33,6 +33,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     liveUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     featured: true,
-    image: "assets/projects/n8n_crawler.png"
+    image: assets.projects.n8n_crawler
   }
 ];

@@ -1,30 +1,31 @@
-
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer'
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { sendLeadToWebhook, type WebhookLeadPayload } from "@/lib/webhook";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    // Validation
+    // ── Validation ────────────────────────────────────────────────────────────
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { success: false, message: 'All fields are required' },
+        { success: false, message: "All fields are required" },
         { status: 400 }
       );
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { success: false, message: 'Invalid email address' },
+        { success: false, message: "Invalid email address" },
         { status: 400 }
       );
     }
+
+    // ── Send Email (nodemailer) ───────────────────────────────────────────────
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -54,18 +55,32 @@ export async function POST(request: NextRequest) {
       `,
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
+    // ── Fire Webhook (non-blocking) ───────────────────────────────────────────
+    // We fire-and-forget so that a webhook failure never breaks the form UX.
+    const leadPayload: WebhookLeadPayload = {
+      name,
+      email,
+      subject,
+      message,
+      source: "portfolio-contact-form",
+      submittedAt: new Date().toISOString(),
+    };
+
+    sendLeadToWebhook(leadPayload).catch((err) => {
+      // Log the error server-side but don't surface it to the visitor.
+      console.error("[Webhook] Failed to deliver lead:", err);
+    });
+
     return NextResponse.json(
-      { success: true, message: 'Message sent successfully!' },
+      { success: true, message: "Message sent successfully!" },
       { status: 200 }
     );
-
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error("Error sending email:", error);
     return NextResponse.json(
-      { success: false, message: 'Failed to send message. Please try again.' },
+      { success: false, message: "Failed to send message. Please try again." },
       { status: 500 }
     );
   }
