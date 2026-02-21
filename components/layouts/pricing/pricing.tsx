@@ -3,8 +3,9 @@
 import { motion } from "motion/react";
 import { PRICING_TIERS, MAINTENANCE_PLAN } from "@/data/pricing";
 import { Card } from "@/components/ui/card";
-import { Check, Zap, Shield, Rocket, Clock } from "lucide-react";
+import { Check, Zap, Shield, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Pricing = () => {
     return (
@@ -104,10 +105,11 @@ const Pricing = () => {
                                         Stop wasting hours on manual tasks. Let&apos;s build your system today.
                                     </p>
                                 </div>
-                                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg gap-2">
-                                    <Rocket className="w-5 h-5" />
-                                    Book a Free Automation Audit
-                                </Button>
+                                <Link href="#contact">
+                                    <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-lg gap-2 cursor-pointer">
+                                        Book a Free Automation Audit
+                                    </Button>
+                                </Link>
                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                                     <Clock className="w-4 h-4" />
                                     <span>30-minute discovery call</span>
