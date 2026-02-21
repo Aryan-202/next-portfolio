@@ -25,10 +25,11 @@ export const FOOTER_LINKS = {
     { name: 'Home', href: '/', description: 'Go to homepage' },
     { name: 'About', href: '/about', description: 'Learn about me' },
     { name: 'Projects', href: '/projects', description: 'View my work' },
+    { name: 'Pricing', href: '/pricing', description: 'View pricing plans' },
     { name: 'Blog', href: '/blog', description: 'Read my articles' },
     { name: 'Contact', href: '/contact', description: 'Get in touch' },
   ] as const,
-  
+
   legal: [
     { name: 'Privacy Policy', href: '/privacy', description: 'Privacy policy' },
     { name: 'Terms of Service', href: '/terms', description: 'Terms and conditions' },

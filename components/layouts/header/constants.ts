@@ -21,6 +21,11 @@ export const NAV_LINKS: readonly NavLink[] = [
     description: 'View my work'
   },
   {
+    name: 'Pricing',
+    href: '#pricing',
+    description: 'View pricing plans'
+  },
+  {
     name: 'Blog',
     href: '/blog',
     description: 'Read my articles'
