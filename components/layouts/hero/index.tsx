@@ -6,7 +6,6 @@ import { Download } from "lucide-react";
 import { motion } from "motion/react";
 import SplitText from "@/components/SplitText";
 import { useState, useEffect } from "react";
-import LightRays from "@/components/LightRays";
 import Image from "next/image";
 
 const TITLES = PROFILE_INFO.title;
@@ -30,15 +29,6 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden"
     >
       <div className="absolute inset-0 z-0 opacity-40">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#ffffff"
-          raysSpeed={1.90}
-          lightSpread={4.0}
-          rayLength={3.75}
-          pulsating={true}
-          followMouse={true}
-        />
       </div>
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -64,20 +54,7 @@ const Hero = () => {
               </h1>
 
               <div className="h-[60px] flex items-center">
-                <SplitText
-                  key={key}
-                  text={TITLES[currentTitleIndex]}
-                  className="text-2xl lg:text-3xl font-semibold text-primary"
-                  delay={50}
-                  duration={0.5}
-                  ease="power3.out"
-                  splitType="chars"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  rootMargin="-100px"
-                  tag="h2"
-                />
+                <h2>AI Consultant & Automation Engineer</h2>
               </div>
 
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
