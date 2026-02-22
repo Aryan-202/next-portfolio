@@ -12,13 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1,
         },
         {
-            url: `${baseUrl}/about`,
+            url: `${baseUrl}/#about`,
             lastModified,
             changeFrequency: 'weekly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/projects`,
+            url: `${baseUrl}/#projects`,
             lastModified,
             changeFrequency: 'weekly',
             priority: 0.8,
@@ -30,19 +30,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/pricing`,
+            url: `${baseUrl}/#pricing`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.6,
         },
         {
-            url: `${baseUrl}/contact`,
+            url: `${baseUrl}/#contact`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/feedback`,
+            url: `${baseUrl}/#feedback`,
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.5,
