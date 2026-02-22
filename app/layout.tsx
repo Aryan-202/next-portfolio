@@ -88,6 +88,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "google99d3a15437b7b07f",
+  },
 };
 
 const jsonLd = {
