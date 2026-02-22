@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-
-Sitemap: https://aryan-vishwakarma.vercel.app/sitemap_index.xml
-Sitemap: https://aryan-vishwakarma.vercel.app/sitemap.xml
