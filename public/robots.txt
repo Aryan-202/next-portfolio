@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://portfolio-leads.onrender.com/sitemap.xml
+Sitemap: https://aryan-vishwakarma.vercel.app/sitemap.xml

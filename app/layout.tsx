@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     "Supabase Developer Portfolio",
     "Low-code Automation Expert"
   ],
-  authors: [{ name: "Aryan Vishwakarma", url: "https://portfolio-leads.onrender.com" }],
+  authors: [{ name: "Aryan Vishwakarma", url: "https://aryan-vishwakarma.vercel.app" }],
   creator: "Aryan Vishwakarma",
   publisher: "Aryan Vishwakarma",
   formatDetection: {
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://portfolio-leads.onrender.com"),
+  metadataBase: new URL("https://aryan-vishwakarma.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Aryan Vishwakarma | Automation Engineer & AI Specialist",
     description: "Helping businesses increase leads, reduce manual work, and scale operations using Python, APIs & AI.",
-    url: "https://portfolio-leads.onrender.com",
+    url: "https://aryan-vishwakarma.vercel.app",
     siteName: "Aryan Vishwakarma",
     images: [
       {
@@ -96,8 +96,8 @@ const jsonLd = {
   "name": "Aryan Vishwakarma",
   "alternateName": ["Aryan-202", "AryanxSenpai"],
   "jobTitle": "Automation Engineer & AI Workflow Specialist",
-  "url": "https://portfolio-leads.onrender.com",
-  "image": "https://portfolio-leads.onrender.com/images/profile/profile.jpeg",
+  "url": "https://aryan-vishwakarma.vercel.app",
+  "image": "https://aryan-vishwakarma.vercel.app/images/profile/profile.jpeg",
   "sameAs": [
     "https://github.com/Aryan-202",
     "https://www.linkedin.com/in/aryanspf",
