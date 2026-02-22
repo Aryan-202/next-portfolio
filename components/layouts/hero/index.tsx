@@ -54,7 +54,7 @@ const Hero = () => {
               </h1>
 
               <div className="h-[60px] flex items-center">
-                <h2>AI Consultant & Automation Engineer</h2>
+                <h1 className="text-2xl lg:text-3xl font-semibold text-primary">AI Consultant & Automation Engineer</h1>
               </div>
 
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
