@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://aryan-vishwakarma.vercel.app'
-    const lastModified = new Date().toISOString()
+    const lastModified = new Date()
 
     return [
         {
@@ -46,6 +46,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified,
             changeFrequency: 'monthly',
             priority: 0.5,
+        },
+        {
+            url: `${baseUrl}/privacy`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/terms`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.3,
         },
     ]
 }
