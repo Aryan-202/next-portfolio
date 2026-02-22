@@ -20,24 +20,73 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aryan Vishwakarma | Automation Engineer & Lead Generation Systems",
-  description: "Aryan Vishwakarma is an Automation Engineer helping businesses increase leads, reduce manual work, and scale operations using Python, APIs & AI.",
+  title: "Aryan Vishwakarma | Automation Engineer & Lead Generation Expert",
+  description: "Aryan Vishwakarma is a top-rated Automation Engineer & AI Specialist. Scaling businesses with n8n, Python, and AI-powered lead generation systems. See portfolio for DAAI, n8n crawlers, and more.",
   keywords: [
     "Aryan Vishwakarma",
-    "Automation Engineer",
-    "Business Automation",
-    "Lead Generation Automation",
-    "n8n Automation",
-    "Python Automation",
-    "Workflow Automation Specialist"
+    "Aryan-202",
+    "AryanxSenpai",
+    "Automation Engineer Gorakhpur",
+    "n8n Automation Specialist India",
+    "AI Workflow Builder",
+    "Lead Generation Automation Expert",
+    "Python Automation Developer",
+    "DAAI AI Spreadsheet",
+    "Business Process Automation",
+    "Custom CRM Automation",
+    "SaaS Workflow Optimization",
+    "AI-Powered Web Crawler",
+    "B2B Lead Scrapper n8n",
+    "Automation Consultant for Agencies",
+    "Next.js SEO Portfolio",
+    "Supabase Developer Portfolio",
+    "Low-code Automation Expert"
   ],
-  authors: [{ name: "Aryan Vishwakarma" }],
+  authors: [{ name: "Aryan Vishwakarma", url: "https://portfolio-leads.onrender.com" }],
+  creator: "Aryan Vishwakarma",
+  publisher: "Aryan Vishwakarma",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://portfolio-leads.onrender.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Aryan Vishwakarma | Automation Engineer",
-    description: "Automation Engineer helping businesses increase leads, reduce manual work, and scale operations.",
+    title: "Aryan Vishwakarma | Automation Engineer & AI Specialist",
+    description: "Helping businesses increase leads, reduce manual work, and scale operations using Python, APIs & AI.",
     url: "https://portfolio-leads.onrender.com",
-    siteName: "Aryan Vishwakarma Portfolio",
+    siteName: "Aryan Vishwakarma",
+    images: [
+      {
+        url: "/images/profile/profile.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Aryan Vishwakarma - Automation Engineer",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Aryan Vishwakarma | Automation Engineer",
+    description: "Automation Engineer helping businesses scale with AI & Python.",
+    creator: "@AryanxSenpai",
+    images: ["/images/profile/profile.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -45,13 +94,24 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Aryan Vishwakarma",
-  "jobTitle": "Automation Engineer",
+  "alternateName": ["Aryan-202", "AryanxSenpai"],
+  "jobTitle": "Automation Engineer & AI Workflow Specialist",
   "url": "https://portfolio-leads.onrender.com",
+  "image": "https://portfolio-leads.onrender.com/images/profile/profile.jpeg",
   "sameAs": [
     "https://github.com/Aryan-202",
     "https://www.linkedin.com/in/aryanspf",
     "https://x.com/AryanxSenpai",
     "https://www.instagram.com/_aryan._.vishwakarma_/"
+  ],
+  "description": "Automation Engineer helping businesses increase leads, reduce manual work, and scale operations using Python, APIs & AI.",
+  "knowsAbout": [
+    "n8n",
+    "Python",
+    "Lead Generation",
+    "AI Automation",
+    "Next.js",
+    "SaaS Development"
   ]
 };
 

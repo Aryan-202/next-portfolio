@@ -3,6 +3,7 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://portfolio-leads.onrender.com'
 
+    // Static routes
     const routes = [
         '',
         '/about',
@@ -11,15 +12,33 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/pricing',
         '/contact',
         '/feedback',
-        '/privacy',
-        '/terms',
-        '/blog/aryan-vishwakarma-automation-engineer',
-    ]
-
-    return routes.map((route) => ({
+    ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: route === '' ? 1 : 0.8,
+        changeFrequency: 'weekly' as const,
+        priority: route === '' ? 1.0 : 0.8,
     }))
+
+    // Legal/Minor routes
+    const legalRoutes = [
+        '/privacy',
+        '/terms',
+    ].map((route) => ({
+        url: `${baseUrl}${route}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.3,
+    }))
+
+    // Specific blog posts or dynamic content if any
+    const blogRoutes = [
+        '/blog/aryan-vishwakarma-automation-engineer',
+    ].map((route) => ({
+        url: `${baseUrl}${route}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }))
+
+    return [...routes, ...legalRoutes, ...blogRoutes]
 }
