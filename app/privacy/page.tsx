@@ -1,8 +1,11 @@
-
-"use client";
-
 import LegalPage from "@/components/legal/LegalPage";
 import { PROFILE_INFO } from "@/data";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy",
+    description: "Privacy Policy for Aryan Vishwakarma's portfolio and services.",
+};
 
 export default function PrivacyPolicy() {
     const currentDate = new Date().toLocaleDateString('en-US', {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Aryan Vishwakarma | Automation Engineer & Lead Generation Expert",
+    title: "Automation Engineer & Lead Generation Expert",
     description: "Aryan Vishwakarma is an Automation Engineer specializing in business process automation, lead generation systems, and workflow automation using Python, APIs, and AI.",
 };
 

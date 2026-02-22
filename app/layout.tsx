@@ -20,8 +20,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aryan Vishwakarma | Automation Engineer & Lead Generation Expert",
-  description: "Aryan Vishwakarma is a top-rated Automation Engineer & AI Specialist. Scaling businesses with n8n, Python, and AI-powered lead generation systems. See portfolio for DAAI, n8n crawlers, and more.",
+  title: {
+    default: "Aryan Vishwakarma | Automation Engineer & Lead Generation Expert",
+    template: "%s | Aryan Vishwakarma",
+  },
+  description: "Aryan Vishwakarma is a top-rated Automation Engineer & AI Specialist. Scaling businesses with n8n, Python, and AI-powered lead generation systems.",
   keywords: [
     "Aryan Vishwakarma",
     "Aryan-202",

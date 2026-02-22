@@ -1,5 +1,12 @@
 
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Insights on automation, AI, and business process optimization by Aryan Vishwakarma.",
+};
+
 const BlogPage = () => {
   return (
     <div className="min-h-screen py-20 px-4">
