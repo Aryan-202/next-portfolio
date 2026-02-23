@@ -57,8 +57,9 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail(mailOptions);
 
-    // ── Fire Webhook (non-blocking) ───────────────────────────────────────────
-    // We fire-and-forget so that a webhook failure never breaks the form UX.
+    // ── Fire Webhook (Awaited) ────────────────────────────────────────────────
+    // We await this to ensure the serverless function doesn't shut down before 
+    // the request is actually sent to n8n.
     const leadPayload: WebhookLeadPayload = {
       name,
       email,
@@ -68,10 +69,12 @@ export async function POST(request: NextRequest) {
       submittedAt: new Date().toISOString(),
     };
 
-    sendLeadToWebhook(leadPayload).catch((err) => {
-      // Log the error server-side but don't surface it to the visitor.
+    try {
+      await sendLeadToWebhook(leadPayload);
+    } catch (err) {
+      // Log the error server-side but don't let it crash the whole request if the email already sent
       console.error("[Webhook] Failed to deliver lead:", err);
-    });
+    }
 
     return NextResponse.json(
       { success: true, message: "Message sent successfully!" },
