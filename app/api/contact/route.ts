@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
-    // ── Validation ────────────────────────────────────────────────────────────
+    // Validation
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { success: false, message: "All fields are required" },
@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // ── Send Email (nodemailer) ───────────────────────────────────────────────
+    // Send Email (nodemailer)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -57,9 +57,7 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail(mailOptions);
 
-    // ── Fire Webhook (Awaited) ────────────────────────────────────────────────
-    // We await this to ensure the serverless function doesn't shut down before 
-    // the request is actually sent to n8n.
+    // Fire Webhook 
     const leadPayload: WebhookLeadPayload = {
       name,
       email,
@@ -72,7 +70,6 @@ export async function POST(request: NextRequest) {
     try {
       await sendLeadToWebhook(leadPayload);
     } catch (err) {
-      // Log the error server-side but don't let it crash the whole request if the email already sent
       console.error("[Webhook] Failed to deliver lead:", err);
     }
 
