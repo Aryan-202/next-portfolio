@@ -31,7 +31,7 @@ const Navbar = () => {
                             title={sublink.name}
                             subtitle={sublink.description}
                             icon={sublink.icon}
-                            className="hover:bg-white/5 rounded-xl transition-colors !max-w-none"
+                            className="hover:bg-white/5 rounded-xl transition-colors !max-w-none items-center"
                           />
                         ))}
                       </div>
