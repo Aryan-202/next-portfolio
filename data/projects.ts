@@ -30,7 +30,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     liveUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     featured: true,
-    image: assets.projects.n8n_crawler,
+    image: assets.projects.portfolio_leads,
   },
   {
     id: 3,
@@ -48,6 +48,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     liveUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     featured: true,
-    image: assets.projects.portfolio_leads,
+    image: assets.projects.n8n_crawler,
   },
 ];
