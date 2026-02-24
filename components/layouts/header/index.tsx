@@ -1,139 +1,60 @@
-'use client'
-import { useState, useEffect } from 'react'
-import { Menu, X, MessageSquare } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { NavLinks } from './nav-links'
-import { PROFILE_INFO } from '@/data'
-import { CTA_BUTTON } from './constants'
-import styles from './navbar.module.css'
+"use client";
+
+import React from "react";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
+import { NAV_LINKS } from "./constants";
+import { NavMenuItemLink } from "@/components/marketing/header-navigation/base-components/nav-menu-item";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
-
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
-
-  if (!mounted) {
-    return (
-      <header className={styles.header}>
-        <div className={styles.container}>
-          <div className={styles.layout}>
-            {/* Placeholder content */}
-            <div className={styles.logoSection}>
-              <div className={styles.profileImage} />
-              <div className="space-y-1">
-                <div className="h-5 w-24 bg-muted rounded animate-pulse" />
-                <div className="h-3 w-16 bg-muted rounded animate-pulse" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    )
-  }
-
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <div className={styles.layout}>
-          {/* Logo and Profile Section */}
-          <div className={styles.logoSection}>
-            <Link href="/" className={styles.logoLink} onClick={closeMenu}>
-              <div className={styles.profileImage}>
-                <Image
-                  src={PROFILE_INFO.profileImage}
-                  alt={`${PROFILE_INFO.name} - ${PROFILE_INFO.subtitle}`}
-                  fill
-                  className="object-cover"
-                  sizes="40px"
-                  priority
-                />
-              </div>
-              <div>
-                <h1 className={styles.name}>{PROFILE_INFO.name}</h1>
-                <p className={styles.title}>{PROFILE_INFO.subtitle}</p>
-              </div>
-            </Link>
-          </div>
+    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+      <header className="flex items-center justify-center rounded-full border border-white/10 bg-[#0c0c0c]/70 backdrop-blur-xl px-4 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+        <nav className="flex items-center gap-1">
+          {NAV_LINKS.map((link) => {
+            if (link.sublinks) {
+              return (
+                <div key={link.name} className="relative group px-1">
+                  <button className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-white/70 transition-all hover:text-white group-hover:text-white">
+                    {link.name}
+                    <ChevronDown className="size-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                  </button>
 
-          {/* Desktop Navigation */}
-          <NavLinks variant="desktop" />
+                  {/* Dropdown Menu - Positioned centered below the pill */}
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 scale-95 group-hover:scale-100 origin-top">
+                    <div className="w-[600px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0c0c0c] p-4 shadow-2xl">
+                      <div className="grid grid-cols-2 gap-2">
+                        {link.sublinks.map((sublink) => (
+                          <NavMenuItemLink
+                            key={sublink.name}
+                            href={sublink.href}
+                            title={sublink.name}
+                            subtitle={sublink.description}
+                            icon={sublink.icon}
+                            className="hover:bg-white/5 rounded-xl transition-colors !max-w-none"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
 
-          {/* Right Side Actions */}
-          <div className={styles.actions}>
-            {/* Desktop CTA Button */}
-            <Button
-              asChild
-              className={styles.ctaButton}
-              title={CTA_BUTTON.description}
-            >
-              <Link href={CTA_BUTTON.href}>
-                {CTA_BUTTON.text}
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="px-4 py-2 text-sm font-medium text-white/70 transition-all hover:text-white"
+              >
+                {link.name}
               </Link>
-            </Button>
+            );
+          })}
+        </nav>
+      </header>
+    </div>
+  );
+};
 
-            {/* Mobile Menu Toggle */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleMenu}
-              className={styles.mobileMenuButton}
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMenuOpen ? (
-                <X className="h-5 w-5" aria-hidden="true" />
-              ) : (
-                <Menu className="h-5 w-5" aria-hidden="true" />
-              )}
-              <span className={styles.visuallyHidden}>
-                {isMenuOpen ? 'Close menu' : 'Open menu'}
-              </span>
-            </Button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div 
-            id="mobile-menu" 
-            className={styles.mobileMenu}
-            role="menu"
-            aria-label="Mobile navigation"
-          >
-            <NavLinks variant="mobile" onLinkClick={closeMenu} />
-            
-            {/* Mobile CTA Button */}
-            <Button
-              asChild
-              size="sm"
-              className={styles.mobileCtaButton}
-              title={CTA_BUTTON.description}
-            >
-              <Link href={CTA_BUTTON.href} onClick={closeMenu}>
-                <MessageSquare className="mr-2 h-4 w-4" />
-                {CTA_BUTTON.text}
-              </Link>
-            </Button>
-          </div>
-        )}
-      </div>
-    </header>
-  )
-}
-
-export default Navbar
+export default Navbar;
