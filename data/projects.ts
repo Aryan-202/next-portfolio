@@ -5,34 +5,49 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "DAAI — AI Spreadsheet Automation",
-    description: "Eliminates manual data entry and reporting by letting businesses control spreadsheets with plain English commands. Reduces reporting time by up to 80% for non-technical teams.",
+    description:
+      "Eliminates manual data entry and reporting by letting businesses control spreadsheets with plain English commands. Reduces reporting time by up to 80% for non-technical teams.",
     category: "AI Automation",
     technologies: ["Next.js", "TypeScript", "OpenAI API", "Google Sheets API"],
     githubUrl: "https://github.com/Aryan-202/DAAI",
     liveUrl: "https://daai-sheets.vercel.app",
     featured: true,
-    image: assets.projects.daai
+    image: assets.projects.daai,
   },
   {
     id: 2,
-    title: "Lead Generation Automation System",
-    description: "Automates lead discovery, enrichment, and CRM storage for B2B businesses. Replaces manual lead research and reduces outreach preparation time by 70%, delivering qualified prospects directly into your pipeline.",
-    category: "Lead Generation",
-    technologies: ["n8n", "LinkedIn API", "Google Sheets", "Python"],
+    title: "AI Lead Capture & Email Automation System",
+    description:
+      "An AI-powered webhook-based lead capture system that automatically processes incoming inquiries, extracts structured data using Gemini AI, stores leads in Google Sheets, and triggers personalized email responses. Eliminates manual follow-ups and ensures instant response to every prospect.",
+    category: "AI Automation",
+    technologies: [
+      "n8n",
+      "Google Gemini",
+      "Google Sheets API",
+      "Gmail API",
+      "Webhooks",
+    ],
     githubUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     liveUrl: "https://github.com/Aryan-202/n8n-scrapper.git",
     featured: true,
-    image: assets.projects.lead_scrapper
+    image: assets.projects.n8n_crawler,
   },
   {
     id: 3,
-    title: "n8n AI-Powered Web Crawler Bot",
-    description: "An intelligent web crawler bot built with n8n that extracts all URLs from any webpage and delivers results via Telegram. Features AI-powered URL extraction, anti-bot protection handling, and automatic CSV generation.",
+    title: "AI Web Crawler & Telegram CSV Bot",
+    description:
+      "A fully automated AI web crawling system built in n8n that extracts structured data and URLs from any webpage, processes it using OpenRouter AI, stores results in Google Sheets, generates CSV files dynamically, and delivers them instantly via Telegram bot.",
     category: "Web Automation",
-    technologies: ["n8n", "OpenRouter AI", "Telegram API", "Google Sheets", "JavaScript"],
+    technologies: [
+      "n8n",
+      "OpenRouter AI",
+      "Telegram Bot API",
+      "Google Sheets",
+      "JavaScript",
+    ],
     githubUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     liveUrl: "https://github.com/Aryan-202/n8n-crawler-bot.git",
     featured: true,
-    image: assets.projects.n8n_crawler
-  }
+    image: assets.projects.portfolio_leads,
+  },
 ];
