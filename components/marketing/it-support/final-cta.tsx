@@ -9,7 +9,7 @@ export const FinalCTA = () => {
     return (
         <section className="py-24 relative overflow-hidden">
             {/* Background design */}
-            <div className="absolute inset-0 bg-emerald-500/5 dark:bg-emerald-500/[0.02]" />
+            <div className="absolute inset-0 bg-emerald-500/5 dark:bg-emerald-500/2" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-4 relative z-10">
