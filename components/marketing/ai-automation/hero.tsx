@@ -46,12 +46,14 @@ export const Hero = () => {
                             tag="h1"
                             delay={30}
                         />
-                        <SplitText
-                            text="Run Your Business on Autopilot."
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5, duration: 0.8 }}
                             className="text-5xl md:text-7xl font-bold tracking-tight bg-linear-to-r from-purple-800 to-purple-400 bg-clip-text text-transparent block mt-2"
-                            tag="h1"
-                            delay={60}
-                        />
+                        >
+                            Run Your Business on Autopilot.
+                        </motion.h1>
                     </div>
 
                     <p className="mx-auto mb-10 max-w-2xl text-lg md:text-xl text-muted-foreground">
