@@ -50,6 +50,9 @@ importers:
       react:
         specifier: 19.2.3
         version: 19.2.3
+      react-aria:
+        specifier: ^3.46.0
+        version: 3.46.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react-aria-components:
         specifier: ^1.15.1
         version: 1.15.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
