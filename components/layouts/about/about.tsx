@@ -41,18 +41,20 @@ const About = () => {
 
               <div className="space-y-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  I help businesses eliminate repetitive manual work by building reliable automation systems.
+                  I help businesses grow, automate, and innovate through a full suite of digital services.
                 </p>
 
                 <div>
                   <p className="text-muted-foreground leading-relaxed mb-3">
-                    My work focuses on:
+                    My 6 services:
                   </p>
                   <ul className="text-muted-foreground leading-relaxed list-disc pl-5 space-y-1">
-                    <li>Lead generation & CRM automation</li>
-                    <li>Reporting & operations workflows</li>
-                    <li>Email and follow-up systems</li>
-                    <li>AI-assisted business processes</li>
+                    <li>AI Automation — workflows, lead gen & CRM</li>
+                    <li>Mobile App Development — iOS & Android apps</li>
+                    <li>Website Development — fast, modern websites</li>
+                    <li>Custom Software — tailored business solutions</li>
+                    <li>Data Handling — scraping, pipelines & analytics</li>
+                    <li>IT Support — reliable tech support & maintenance</li>
                   </ul>
                 </div>
 

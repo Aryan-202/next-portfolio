@@ -54,11 +54,11 @@ const Hero = () => {
               </h1>
 
               <div className="h-[60px] flex items-center">
-                <h1 className="text-2xl lg:text-3xl font-semibold text-primary">AI Consultant & Automation Engineer</h1>
+                <h1 className="text-2xl lg:text-3xl font-semibold text-primary">AI · Mobile · Web · Software · Data · IT</h1>
               </div>
 
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-                {PROFILE_INFO.description || PROFILE_INFO.bio}
+                I offer 6 services — AI Automation, Mobile App Development, Website Development, Custom Software, Data Handling & IT Support — built to help your business scale smarter.
               </p>
             </motion.div>
 
