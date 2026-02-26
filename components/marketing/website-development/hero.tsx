@@ -89,7 +89,7 @@ export const Hero = () => {
                     <div className="relative z-10 rounded-2xl border border-border bg-card/50 p-2 shadow-2xl backdrop-blur-sm overflow-hidden">
                         <div className="aspect-video w-full relative rounded-xl overflow-hidden bg-muted">
                             <Image
-                                src={assets.projects.portfolio_leads}
+                                src={assets.showcase.web_showcase_1}
                                 alt="Web Showcase"
                                 fill
                                 className="object-cover object-top opacity-90"

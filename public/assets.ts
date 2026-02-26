@@ -9,6 +9,9 @@ import instagram from './svgs/instagram.svg'
 import profile from './images/profile/profile.jpeg'
 import logo from './images/profile/logo.jpg'
 
+import cue from './showcase/mobile/cue-music-player.png'
+import web_showcase_1 from './showcase/web/saas-web-app.png'
+
 export const assets = {
   logos: {
     x: x,
@@ -22,6 +25,11 @@ export const assets = {
     
     portfolio_leads: portfolio_leads,
     n8n_crawler: n8n_crawler
+  },
+
+  showcase: {
+    mobile_showcase_1: cue,
+    web_showcase_1: web_showcase_1
   },
 
   avatar : {

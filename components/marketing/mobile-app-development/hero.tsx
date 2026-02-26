@@ -6,6 +6,8 @@ import { Button } from "@/components/base/buttons/button";
 import { Rocket, Mail } from "lucide-react";
 import LightRays from "@/components/LightRays";
 import SplitText from "@/components/SplitText";
+import Image from "next/image";
+import { assets } from "@/public/assets";
 
 export const Hero = () => {
     return (
@@ -86,10 +88,14 @@ export const Hero = () => {
                     transition={{ delay: 0.6, duration: 1, ease: "easeOut" }}
                     className="mt-16 mx-auto max-w-4xl relative"
                 >
-                    <div className="relative z-10 rounded-2xl border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur-sm">
-                        <div className="aspect-video rounded-xl bg-linear-to-br from-slate-900 to-slate-800 flex items-center justify-center overflow-hidden">
-                            {/* We could place an image here later */}
-                            <div className="text-white/20 text-6xl font-bold italic select-none">MOBILE SHOWCASE</div>
+                    <div className="relative z-10 rounded-2xl border border-border bg-card/50 p-2 shadow-2xl backdrop-blur-sm overflow-hidden">
+                        <div className="aspect-video w-full relative rounded-xl overflow-hidden bg-muted">
+                            <Image
+                                src={assets.showcase.mobile_showcase_1}
+                                alt="Mobile App Showcase"
+                                fill
+                                className="object-cover object-top opacity-90"
+                            />
                         </div>
                     </div>
                     {/* Decorative glows */}
