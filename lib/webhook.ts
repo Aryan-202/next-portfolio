@@ -1,13 +1,4 @@
-
-
-export interface WebhookLeadPayload {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-    source: string;
-    submittedAt: string;
-}
+import type { WebhookLeadPayload } from "@/types/webhook-n8n";
 
 function getWebhookUrl(): string | null {
     const isProd = process.env.NODE_ENV === "production";
