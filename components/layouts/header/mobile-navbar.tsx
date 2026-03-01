@@ -3,14 +3,28 @@
 import { useState } from "react";
 import Link from "next/link";
 import { X, Menu, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "./constants";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { assets } from "@/public/assets";
 import { PROFILE_INFO } from "@/data/personal-info";
 
 const MobileNavbar = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+
+  const filteredLinks = NAV_LINKS.filter((link) => {
+    if (link.name === "Pricing") {
+      // Hide pricing on home page
+      if (pathname === "/") return false;
+      // Show pricing on service pages
+      if (pathname.startsWith("/services")) return true;
+      // Default: hide pricing on other pages (blog, etc) unless specifically wanted
+      return false;
+    }
+    return true;
+  });
 
   const toggleExpanded = (name: string) => {
     setExpandedItem((prev) => (prev === name ? null : name));
@@ -56,9 +70,8 @@ const MobileNavbar = () => {
 
       {/* Slide-up drawer */}
       <div
-        className={`fixed bottom-0 left-0 right-0 z-[70] rounded-t-3xl border-t border-white/10 bg-[#0c0c0c] transition-transform duration-300 ease-out ${
-          isOpen ? "translate-y-0" : "translate-y-full"
-        }`}
+        className={`fixed bottom-0 left-0 right-0 z-[70] rounded-t-3xl border-t border-white/10 bg-[#0c0c0c] transition-transform duration-300 ease-out ${isOpen ? "translate-y-0" : "translate-y-full"
+          }`}
       >
         {/* Handle + close */}
         <div className="flex items-center justify-between px-5 pt-4 pb-2">
@@ -94,7 +107,7 @@ const MobileNavbar = () => {
 
         {/* Nav links */}
         <nav className="flex flex-col px-3 py-3 pb-10 max-h-[70vh] overflow-y-auto">
-          {NAV_LINKS.map((link) => {
+          {filteredLinks.map((link) => {
             if (link.sublinks) {
               const isExpanded = expandedItem === link.name;
               return (
@@ -105,9 +118,8 @@ const MobileNavbar = () => {
                   >
                     {link.name}
                     <ChevronDown
-                      className={`size-4 transition-transform duration-300 ${
-                        isExpanded ? "rotate-180" : ""
-                      }`}
+                      className={`size-4 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
 

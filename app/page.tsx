@@ -1,7 +1,6 @@
 import Hero from "@/components/layouts/hero";
 import About from "@/components/layouts/about";
 import Projects from "@/components/layouts/projects";
-import Pricing from "@/components/layouts/pricing";
 import Contact from "@/components/layouts/contact";
 import FeedbackPage from "./feedback/page";
 import { Metadata } from "next";
@@ -88,7 +87,6 @@ export default function Home() {
         <Hero />
         <About />
         <Projects />
-        <Pricing />
         <FeedbackPage />
         <Contact />
       </main>

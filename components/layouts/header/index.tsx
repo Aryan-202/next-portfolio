@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "./constants";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { NavMenuItemLink } from "@/components/marketing/header-navigation/base-components/nav-menu-item";
@@ -10,6 +11,21 @@ import { PROFILE_INFO } from "@/data/personal-info";
 import MobileNavbar from "./mobile-navbar";
 
 const Navbar = () => {
+  const pathname = usePathname();
+
+  const filteredLinks = NAV_LINKS.filter((link) => {
+    if (link.name === "Pricing") {
+      // Hide pricing on home page
+      if (pathname === "/") return false;
+      // Show pricing on service pages
+      if (pathname.startsWith("/services")) return true;
+      // Default: hide pricing on other pages (blog, etc) unless specifically wanted
+      // Based on user request: "when i am on home url i dont want pricing... when i am any of the services tab i need its pricing"
+      return false;
+    }
+    return true;
+  });
+
   return (
     <>
       {/* ── Desktop navbar (hidden on mobile) ── */}
@@ -33,7 +49,7 @@ const Navbar = () => {
           <div className="w-px h-4 bg-white/10 mx-1" />
 
           <nav className="flex items-center gap-1">
-            {NAV_LINKS.map((link) => {
+            {filteredLinks.map((link) => {
               if (link.sublinks) {
                 return (
                   <div key={link.name} className="relative group px-1">
