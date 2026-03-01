@@ -1,4 +1,5 @@
 import type { WebhookLeadPayload } from "@/types/webhook-n8n";
+export type { WebhookLeadPayload };
 
 function getWebhookUrl(): string | null {
     const isProd = process.env.NODE_ENV === "production";
