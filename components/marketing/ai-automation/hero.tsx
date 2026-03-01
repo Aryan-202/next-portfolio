@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/base/buttons/button";
 import { Bot, Mail } from "lucide-react";
