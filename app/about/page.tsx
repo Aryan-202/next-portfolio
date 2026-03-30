@@ -1,4 +1,3 @@
-import React from 'react'
 import About from '@/components/layouts/about'
 import { Metadata } from "next";
 
