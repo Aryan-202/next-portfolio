@@ -2,6 +2,6 @@ export interface NavLink {
     name: string;
     href: string;
     description?: string;
-    icon?: any;
+    icon?: React.ReactNode;
     sublinks?: NavLink[];
 }
