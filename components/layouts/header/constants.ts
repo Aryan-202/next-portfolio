@@ -1,4 +1,4 @@
-import { NavLink } from "@/types/navlinks";
+import { NavLink } from "@/@types/navlinks";
 import {
   Smartphone,
   Globe,

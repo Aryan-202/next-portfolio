@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Star } from "lucide-react";
 import Image from "next/image";
-import type { Project } from "@/types/projects";
+import type { Project } from "@/@types/projects";
 import styles from "./project.module.css";
 
 interface ProjectCardProps {
