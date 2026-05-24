@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { X as CloseIcon } from "@untitledui/icons";
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components";
 import { cx } from "@/lib/utils/cx";
@@ -23,8 +24,12 @@ interface CloseButtonProps extends AriaButtonProps {
 }
 
 export const CloseButton = ({ label, className, size = "sm", theme = "light", ...otherProps }: CloseButtonProps) => {
+    const reactId = useId();
+    const id = otherProps.id || reactId;
     return (
         <AriaButton
+            {...{ suppressHydrationWarning: true } as any}
+            id={id}
             {...otherProps}
             aria-label={label || "Close"}
             className={(state) =>

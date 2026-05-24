@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "./constants";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { NavMenuItemLink } from "@/components/marketing/header-navigation/base-components/nav-menu-item";
@@ -10,6 +12,27 @@ import { PROFILE_INFO } from "@/data/personal-info";
 import MobileNavbar from "./mobile-navbar";
 
 const Navbar = () => {
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navLinks = (mounted && pathname === "/")
+    ? NAV_LINKS.filter(link => link.name !== "Pricing")
+    : NAV_LINKS;
+
+  const getHref = (href: string) => {
+    if (pathname === "/") {
+      if (href === "/about") return "#about";
+      if (href === "/projects") return "#projects";
+      if (href === "/contact") return "#contact";
+      if (href === "/feedback") return "#feedback";
+    }
+    return href;
+  };
+
   return (
     <>
       {/* ── Desktop navbar (hidden on mobile) ── */}
@@ -33,7 +56,7 @@ const Navbar = () => {
           <div className="w-px h-4 bg-white/10 mx-1" />
 
           <nav className="flex items-center gap-1">
-            {NAV_LINKS.map((link) => {
+            {navLinks.map((link) => {
               if (link.sublinks) {
                 return (
                   <div key={link.name} className="relative group px-1">
@@ -66,7 +89,7 @@ const Navbar = () => {
               return (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={getHref(link.href)}
                   className="px-4 py-2 text-sm font-medium text-white/70 transition-all hover:text-white"
                 >
                   {link.name}

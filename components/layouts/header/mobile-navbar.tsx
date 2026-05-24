@@ -1,16 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { X, Menu, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "./constants";
 import { Avatar } from "@/components/base/avatar/avatar";
 import { assets } from "@/public/assets";
 import { PROFILE_INFO } from "@/data/personal-info";
 
 const MobileNavbar = () => {
+  const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const navLinks = (mounted && pathname === "/")
+    ? NAV_LINKS.filter(link => link.name !== "Pricing")
+    : NAV_LINKS;
+
+  const getHref = (href: string) => {
+    if (pathname === "/") {
+      if (href === "/about") return "#about";
+      if (href === "/projects") return "#projects";
+      if (href === "/contact") return "#contact";
+      if (href === "/feedback") return "#feedback";
+    }
+    return href;
+  };
 
   const toggleExpanded = (name: string) => {
     setExpandedItem((prev) => (prev === name ? null : name));
@@ -94,7 +115,7 @@ const MobileNavbar = () => {
 
         {/* Nav links */}
         <nav className="flex flex-col px-3 py-3 pb-10 max-h-[70vh] overflow-y-auto">
-          {NAV_LINKS.map((link) => {
+          {navLinks.map((link) => {
             if (link.sublinks) {
               const isExpanded = expandedItem === link.name;
               return (
@@ -149,7 +170,7 @@ const MobileNavbar = () => {
             return (
               <Link
                 key={link.name}
-                href={link.href}
+                href={getHref(link.href)}
                 onClick={() => setIsOpen(false)}
                 className="px-4 py-3 text-sm font-medium text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-all"
               >

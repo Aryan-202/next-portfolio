@@ -11,6 +11,9 @@ import logo from './images/profile/logo.jpg'
 
 import cue from './showcase/mobile/cue-music-player.png'
 import web_showcase_1 from './showcase/web/saas-web-app.png'
+import data_handling_showcase from './showcase/web/data-handling.png'
+import it_support_showcase from './showcase/web/it-support.png'
+import custom_software_showcase from './showcase/web/custom-software.png'
 
 export const assets = {
   logos: {
@@ -29,7 +32,10 @@ export const assets = {
 
   showcase: {
     mobile_showcase_1: cue,
-    web_showcase_1: web_showcase_1
+    web_showcase_1: web_showcase_1,
+    data_handling_showcase: data_handling_showcase,
+    it_support_showcase: it_support_showcase,
+    custom_software_showcase: custom_software_showcase
   },
 
   avatar : {

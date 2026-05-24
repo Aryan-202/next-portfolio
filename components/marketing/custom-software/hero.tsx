@@ -86,8 +86,13 @@ export const Hero = () => {
                     className="mt-16 mx-auto max-w-5xl relative"
                 >
                     <div className="relative z-10 rounded-2xl border border-border bg-card/50 p-2 shadow-2xl backdrop-blur-sm overflow-hidden">
-                        <div className="aspect-video w-full relative rounded-xl overflow-hidden bg-orange-950 flex items-center justify-center">
-                            <div className="text-orange-500/20 text-6xl font-bold italic select-none">SYSTEM ARCHITECTURE</div>
+                        <div className="aspect-video w-full relative rounded-xl overflow-hidden bg-muted">
+                            <Image
+                                src={assets.showcase.custom_software_showcase}
+                                alt="Custom Software Platform Showcase"
+                                fill
+                                className="object-cover object-center opacity-90"
+                            />
                         </div>
                     </div>
                     {/* Decorative glows */}

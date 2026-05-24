@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from "react";
-import React, { isValidElement } from "react";
+import React, { isValidElement, useId } from "react";
 import type { ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps } from "react-aria-components";
 import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
 import { cx, sortCx } from "@/lib/utils/cx";
@@ -194,18 +194,20 @@ export const Button = ({
 
     noTextPadding = isLinkType || noTextPadding;
 
+    const reactId = useId();
+    const id = otherProps.id || reactId;
     let props = {};
 
     if (href) {
         props = {
             ...otherProps,
-
+            id,
             href: disabled ? undefined : href,
         };
     } else {
         props = {
             ...otherProps,
-
+            id,
             type: otherProps.type || "button",
             isPending: loading,
         };
@@ -213,6 +215,7 @@ export const Button = ({
 
     return (
         <Component
+            {...{ suppressHydrationWarning: true } as any}
             data-loading={loading ? true : undefined}
             data-icon-only={isIcon ? true : undefined}
             {...props}

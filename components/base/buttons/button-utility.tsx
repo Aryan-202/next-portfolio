@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from "react";
-import { isValidElement } from "react";
+import { isValidElement, useId } from "react";
 import type { Placement } from "react-aria";
 import type { ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps } from "react-aria-components";
 import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
@@ -65,12 +65,14 @@ export const ButtonUtility = ({
     const href = "href" in otherProps ? otherProps.href : undefined;
     const Component = href ? AriaLink : AriaButton;
 
+    const reactId = useId();
+    const id = otherProps.id || reactId;
     let props = {};
 
     if (href) {
         props = {
             ...otherProps,
-
+            id,
             href: isDisabled ? undefined : href,
 
             // Since anchor elements do not support the `disabled` attribute and state,
@@ -81,7 +83,7 @@ export const ButtonUtility = ({
     } else {
         props = {
             ...otherProps,
-
+            id,
             type: otherProps.type || "button",
             isDisabled,
         };
@@ -89,6 +91,7 @@ export const ButtonUtility = ({
 
     const content = (
         <Component
+            {...{ suppressHydrationWarning: true } as any}
             aria-label={tooltip}
             {...props}
             className={cx(
