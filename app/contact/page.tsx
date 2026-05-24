@@ -1,5 +1,6 @@
 import Contact from "@/components/layouts/contact";
 import { Metadata } from "next";
+import { BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Hire Aryan Vishwakarma | Contact for AI, Mobile, Web & Software Services",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     title: "Contact Aryan Vishwakarma | Hire for AI, Mobile, Web & Software",
     description:
       "Let's build something great. Get in touch for AI automation, mobile apps, websites, custom software, data engineering, or IT support.",
-    url: "https://aryan-vishwakarma.vercel.app/contact",
+    url: `${BASE_URL}/contact`,
     siteName: "Aryan Vishwakarma",
     images: [{ url: "/images/profile/profile.jpeg", width: 1200, height: 630, alt: "Contact Aryan Vishwakarma" }],
     type: "website",

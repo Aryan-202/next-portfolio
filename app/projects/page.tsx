@@ -1,5 +1,6 @@
 import Projects from "@/components/layouts/projects";
 import { Metadata } from "next";
+import { BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Projects | AI Automation, Mobile Apps & Web Dev Portfolio — Aryan Vishwakarma",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Portfolio Projects | AI Automation, Mobile & Web — Aryan Vishwakarma",
     description:
       "Real-world automation, mobile app, and web development projects that save time, generate leads, and scale businesses.",
-    url: "https://aryan-vishwakarma.vercel.app/projects",
+    url: `${BASE_URL}/projects`,
     siteName: "Aryan Vishwakarma",
     images: [{ url: "/images/profile/profile.jpeg", width: 1200, height: 630, alt: "Projects by Aryan Vishwakarma" }],
     type: "website",

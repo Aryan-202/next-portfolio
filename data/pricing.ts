@@ -1,6 +1,7 @@
 export interface PricingTier {
     title: string;
-    priceRange: string;
+    priceRangeINR: string;
+    priceRangeUSD: string;
     description: string;
     features: string[];
     ctaText: string;
@@ -10,7 +11,8 @@ export interface PricingTier {
 export const PRICING_TIERS: PricingTier[] = [
     {
         title: "Starter Automations",
-        priceRange: "₹5,000 – ₹15,000",
+        priceRangeINR: "₹5,000 – ₹15,000",
+        priceRangeUSD: "$75 – $200",
         description: "Simple workflows that eliminate repetitive manual tasks.",
         features: [
             "Form → Sheets → Email automations",
@@ -22,7 +24,8 @@ export const PRICING_TIERS: PricingTier[] = [
     },
     {
         title: "Business Workflow Automation",
-        priceRange: "₹15,000 – ₹40,000",
+        priceRangeINR: "₹15,000 – ₹40,000",
+        priceRangeUSD: "$200 – $500",
         description: "Multi-step automations for lead management, reporting, and operations.",
         features: [
             "Lead generation pipelines",
@@ -36,7 +39,8 @@ export const PRICING_TIERS: PricingTier[] = [
     },
     {
         title: "Advanced Automation & AI Workflows",
-        priceRange: "₹40,000+",
+        priceRangeINR: "₹40,000+",
+        priceRangeUSD: "$500+",
         description: "Custom automation systems designed for scaling businesses.",
         features: [
             "CRM full automation suite",
@@ -51,7 +55,8 @@ export const PRICING_TIERS: PricingTier[] = [
 
 export const MAINTENANCE_PLAN = {
     title: "Monthly Maintenance & Support",
-    price: "₹2,000 – ₹5,000 / month",
+    priceINR: "₹2,000 – ₹5,000 / month",
+    priceUSD: "$25 – $75 / month",
     description: "Ongoing monitoring, fixes, and small improvements to keep your business running smoothly.",
     features: [
         "24/7 Monitoring",

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { PRICING_TIERS, MAINTENANCE_PLAN } from "@/data/pricing";
 import { Card } from "@/components/ui/card";
@@ -8,6 +9,32 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const Pricing = () => {
+    const [currency, setCurrency] = useState<"INR" | "USD">("INR");
+
+    useEffect(() => {
+        // Fallback detection using timezone
+        try {
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            if (tz && !tz.includes("Kolkata") && !tz.includes("India")) {
+                setCurrency("USD");
+            }
+        } catch (_) {}
+
+        // Accurate detection using freeipapi.com
+        fetch("https://freeipapi.com/api/json")
+            .then((res) => res.json())
+            .then((data) => {
+                if (data && data.countryCode && data.countryCode !== "IN") {
+                    setCurrency("USD");
+                } else if (data && data.countryCode === "IN") {
+                    setCurrency("INR");
+                }
+            })
+            .catch(() => {
+                // Keep timezone fallback
+            });
+    }, []);
+
     return (
         <section id="pricing" className="py-20 px-4 scroll-animate bg-muted/30">
             <div className="container mx-auto max-w-6xl">
@@ -47,7 +74,7 @@ const Pricing = () => {
                                     <h3 className="text-2xl font-bold mb-2">{tier.title}</h3>
                                     <p className="text-muted-foreground text-sm h-12 mb-4">{tier.description}</p>
                                     <div className="text-3xl font-bold text-primary">
-                                        {tier.priceRange}
+                                        {currency === "INR" ? tier.priceRangeINR : tier.priceRangeUSD}
                                     </div>
                                 </div>
 
@@ -85,7 +112,7 @@ const Pricing = () => {
                                     </div>
                                     <h3 className="text-2xl font-bold">{MAINTENANCE_PLAN.title}</h3>
                                 </div>
-                                <p className="text-3xl font-bold text-primary mb-6">{MAINTENANCE_PLAN.price}</p>
+                                <p className="text-3xl font-bold text-primary mb-6">{currency === "INR" ? MAINTENANCE_PLAN.priceINR : MAINTENANCE_PLAN.priceUSD}</p>
                                 <p className="text-muted-foreground mb-8 text-lg">
                                     {MAINTENANCE_PLAN.description}
                                 </p>

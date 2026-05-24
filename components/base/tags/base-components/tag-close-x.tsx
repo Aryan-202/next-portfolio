@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, type RefAttributes } from "react";
+import { useId, useState, useEffect, type RefAttributes } from "react";
 import { XClose } from "@untitledui/icons";
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components";
 import { cx } from "@/lib/utils/cx";
@@ -17,8 +17,13 @@ const styles = {
 };
 
 export const TagCloseX = ({ size = "md", className, ...otherProps }: TagCloseXProps) => {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const reactId = useId();
-    const id = otherProps.id || reactId;
+    const id = mounted ? (otherProps.id || reactId) : undefined;
     return (
         <AriaButton
             {...{ suppressHydrationWarning: true } as any}

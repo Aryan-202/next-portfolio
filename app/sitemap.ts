@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
+import { BASE_URL } from '@/lib/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://aryan-vishwakarma.vercel.app';
+    const baseUrl = BASE_URL;
     const lastModified = new Date();
 
     // Core pages

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
+import { BASE_URL } from '@/lib/constants';
 
-const BASE_URL = "https://aryan-vishwakarma.vercel.app";
 const PAGE_URL = `${BASE_URL}/blog/aryan-vishwakarma-automation-engineer`;
 
 export const metadata: Metadata = {

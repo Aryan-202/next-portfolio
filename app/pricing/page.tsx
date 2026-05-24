@@ -1,6 +1,7 @@
 import React from 'react'
 import Pricing from '@/components/layouts/pricing'
 import { Metadata } from "next";
+import { BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: "Pricing | AI Automation, Mobile Apps, Web & Software Services — Aryan Vishwakarma",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
         title: "Service Pricing | AI, Mobile, Web & Software — Aryan Vishwakarma",
         description:
             "Transparent, affordable pricing for all 6 services. No hidden fees. Start small or go enterprise.",
-        url: "https://aryan-vishwakarma.vercel.app/pricing",
+        url: `${BASE_URL}/pricing`,
         siteName: "Aryan Vishwakarma",
         images: [{ url: "/images/profile/profile.jpeg", width: 1200, height: 630, alt: "Service Pricing by Aryan Vishwakarma" }],
         type: "website",

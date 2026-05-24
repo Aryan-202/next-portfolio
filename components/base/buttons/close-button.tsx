@@ -1,6 +1,6 @@
 "use client";
 
-import { useId } from "react";
+import { useId, useState, useEffect } from "react";
 import { X as CloseIcon } from "@untitledui/icons";
 import { Button as AriaButton, type ButtonProps as AriaButtonProps } from "react-aria-components";
 import { cx } from "@/lib/utils/cx";
@@ -24,8 +24,13 @@ interface CloseButtonProps extends AriaButtonProps {
 }
 
 export const CloseButton = ({ label, className, size = "sm", theme = "light", ...otherProps }: CloseButtonProps) => {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const reactId = useId();
-    const id = otherProps.id || reactId;
+    const id = mounted ? (otherProps.id || reactId) : undefined;
     return (
         <AriaButton
             {...{ suppressHydrationWarning: true } as any}

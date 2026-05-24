@@ -10,7 +10,7 @@ import { Pricing } from "@/components/marketing/it-support/pricing";
 import { Testimonials } from "@/components/marketing/it-support/testimonials";
 import { FinalCTA } from "@/components/marketing/it-support/final-cta";
 
-const BASE_URL = "https://aryan-vishwakarma.vercel.app";
+import { BASE_URL } from "@/lib/constants";
 const PAGE_URL = `${BASE_URL}/services/it-support`;
 
 export const metadata: Metadata = {

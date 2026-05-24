@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 import { Background } from "@/components/background";
+import { BASE_URL } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,8 +19,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-const BASE_URL = "https://aryan-vishwakarma.vercel.app";
 
 export const metadata: Metadata = {
   title: {

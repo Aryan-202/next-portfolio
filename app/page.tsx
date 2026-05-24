@@ -4,8 +4,7 @@ import Projects from "@/components/layouts/projects";
 import Contact from "@/components/layouts/contact";
 import FeedbackPage from "./feedback/page";
 import { Metadata } from "next";
-
-const BASE_URL = "https://aryan-vishwakarma.vercel.app";
+import { BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: {

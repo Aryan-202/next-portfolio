@@ -1,7 +1,7 @@
 "use client";
 
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from "react";
-import { isValidElement, useId } from "react";
+import { isValidElement, useId, useState, useEffect } from "react";
 import type { Placement } from "react-aria";
 import type { ButtonProps as AriaButtonProps, LinkProps as AriaLinkProps } from "react-aria-components";
 import { Button as AriaButton, Link as AriaLink } from "react-aria-components";
@@ -65,8 +65,13 @@ export const ButtonUtility = ({
     const href = "href" in otherProps ? otherProps.href : undefined;
     const Component = href ? AriaLink : AriaButton;
 
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     const reactId = useId();
-    const id = otherProps.id || reactId;
+    const id = mounted ? (otherProps.id || reactId) : undefined;
     let props = {};
 
     if (href) {

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { BASE_URL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Blog | AI Automation, Mobile Apps & Business Tech Insights — Aryan Vishwakarma",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     title: "Blog | AI, Mobile & Business Tech Insights — Aryan Vishwakarma",
     description:
       "Expert articles on automation, mobile apps, web dev & business technology by Aryan Vishwakarma.",
-    url: "https://aryan-vishwakarma.vercel.app/blog",
+    url: `${BASE_URL}/blog`,
     siteName: "Aryan Vishwakarma",
     images: [{ url: "/images/profile/profile.jpeg", width: 1200, height: 630, alt: "Aryan Vishwakarma Blog" }],
     type: "website",
