@@ -1,0 +1,68 @@
+name: CI Quality Gate
+
+on:
+  push:
+    branches: [ main, master, dev ]
+  pull_request:
+    branches: [ main, master, dev ]
+
+# Cancel in-progress runs of the same workflow on the same branch to save runner minutes
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality-check:
+    name: Lint, Typecheck & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9  # Matches standard pnpm v9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Get pnpm Store Directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Cache pnpm Virtual Store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Next.js Build Cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          # Generate a new cache key whenever source files or dependencies change
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
+            ${{ runner.os }}-nextjs-
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Quality Gate 1: Linter Check
+        run: pnpm lint
+
+      - name: Quality Gate 2: TypeScript Typecheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Quality Gate 3: Next.js Production Build
+        run: pnpm build
