@@ -8,11 +8,8 @@ import { assets } from "@/public/assets";
 
 export const WhatsAppButton = () => {
   const [showTooltip, setShowTooltip] = useState(false);
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    
     // Check if the user has closed the tooltip before
     const isClosed = localStorage.getItem("whatsapp_tooltip_closed");
     if (!isClosed) {
@@ -22,8 +19,6 @@ export const WhatsAppButton = () => {
       return () => clearTimeout(timer);
     }
   }, []);
-
-  if (!mounted) return null;
 
   const handleCloseTooltip = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -75,7 +70,7 @@ export const WhatsAppButton = () => {
 
             {/* Message Body */}
             <p className="text-xs text-white/80 leading-relaxed font-normal">
-              Hey! 👋 Need help with AI Automation, Web/Mobile Apps, or custom software? Let's connect and discuss your project.
+              Hey! 👋 Need help with AI Automation, Web/Mobile Apps, or custom software? Let&apos;s connect and discuss your project.
             </p>
 
             {/* Action Link inside tooltip */}
