@@ -58,11 +58,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Quality Gate 1: Linter Check
+      - name: "Quality Gate 1: Linter Check"
         run: pnpm lint
 
-      - name: Quality Gate 2: TypeScript Typecheck
+      - name: "Quality Gate 2: TypeScript Typecheck"
         run: pnpm exec tsc --noEmit
 
-      - name: Quality Gate 3: Next.js Production Build
+      - name: "Quality Gate 3: Next.js Production Build"
         run: pnpm build
