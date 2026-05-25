@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 import { Background } from "@/components/background";
+import { WhatsAppButton } from "@/components/layouts/whatsapp-button";
 import { BASE_URL } from "@/lib/constants";
 
 const geistSans = Geist({
@@ -336,6 +337,9 @@ export default function RootLayout({
               {children}
               <Footer />
             </div>
+
+            {/* Global Floating Elements */}
+            <WhatsAppButton />
           </div>
         </ThemeProvider>
       </body>

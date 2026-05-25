@@ -8,6 +8,7 @@ import n8n_crawler from './projects/n8n-crawler.png'
 import instagram from './svgs/instagram.svg'
 import profile from './images/profile/profile.jpeg'
 import logo from './images/profile/logo.jpg'
+import whatsapp from './svgs/WhatsApp.svg'
 
 import cue from './showcase/mobile/cue-music-player.png'
 import web_showcase_1 from './showcase/web/saas-web-app.png'
@@ -21,7 +22,8 @@ export const assets = {
     github: github,
     linkedin: linkedin,
     envelope: envelope,
-    instagram: instagram
+    instagram: instagram,
+    whatsapp: whatsapp
   },
   projects: {
     daai: daai,
