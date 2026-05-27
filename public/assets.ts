@@ -15,6 +15,7 @@ import web_showcase_1 from './showcase/web/saas-web-app.png'
 import data_handling_showcase from './showcase/web/data-handling.png'
 import it_support_showcase from './showcase/web/it-support.png'
 import custom_software_showcase from './showcase/web/custom-software.png'
+import avx_banner from './projects/avx banner.png'
 
 export const assets = {
   logos: {
@@ -27,7 +28,7 @@ export const assets = {
   },
   projects: {
     daai: daai,
-    
+    avx_banner: avx_banner,
     portfolio_leads: portfolio_leads,
     n8n_crawler: n8n_crawler
   },

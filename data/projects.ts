@@ -50,4 +50,22 @@ export const projects: Project[] = [{
   featured: true,
   image: assets.projects.n8n_crawler,
 },
+{
+  id: 4,
+  title: "AVX - Universal File Conversion Engine",
+  description:
+    "An open-source universal file conversion platform and CLI engine for transforming documents, images, audio, video, and data files across multiple formats.",
+  category: "Open Source / CLI",
+  technologies: [
+    "Python",
+    "CLI",
+    "FFmpeg",
+    "Pandoc",
+    "Pillow"
+  ],
+  githubUrl: "https://github.com/Aryan-202/avx",
+  liveUrl: "https://github.com/Aryan-202/avx",
+  featured: true,
+  image: assets.projects.avx_banner,
+}
 ];
